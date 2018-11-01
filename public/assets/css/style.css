@@ -1,0 +1,6 @@
+@font-face {
+    font-family: Graphers Blog;
+    src: url ('../font/Graphers Blog.ttf');
+  }
+  
+  h1 { font-family: Graphers Blog, sans-serif; }
