@@ -1,10 +1,22 @@
 var db = require("../models");
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI('cd587386616044c48131745138aa4aa0');
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  app.get(function(req, res) {
+    newsapi.v2.topHeadlines({
+      category: 'technology',
+      language: 'en',
+      country: 'us'
+    }).then(function(mainHeadlines) {
+      res.json(mainHeadlines);
+      /*
+        {
+          status: "ok",
+          sources: [...]
+        }
+      */
     });
   });
 
