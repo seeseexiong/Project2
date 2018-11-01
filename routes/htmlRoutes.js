@@ -1,4 +1,7 @@
 var db = require("../models");
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI('cd587386616044c48131745138aa4aa0');
+
 
 module.exports = function(app) {
   // Load index page
@@ -24,4 +27,6 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
+
 };
+
