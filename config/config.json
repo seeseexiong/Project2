@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "exampledb",
+    "database": "social_storydb",
     "host": "localhost",
     "dialect": "mysql",
     "port": 3306
