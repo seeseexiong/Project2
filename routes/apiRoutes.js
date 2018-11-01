@@ -1,4 +1,6 @@
 var db = require("../models");
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI('cd587386616044c48131745138aa4aa0');
 
 
 module.exports = function(app) {
