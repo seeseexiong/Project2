@@ -23,3 +23,15 @@ li {
 a {
   color: rgba(0, 0, 0, 0.541) !important;
 }
+
+.card {
+  display: inline-block;
+}
+.container  {
+margin: auto;
+
+}
+
+.container .row {
+  margin: 0 auto;
+}
