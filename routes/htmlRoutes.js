@@ -68,6 +68,7 @@ module.exports = function (app) {
   app.get("*", function (req, res) {
     res.render("404");
   });
+
 };
 
 // route middleware to make sure a user is logged in
