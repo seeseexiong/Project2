@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -10,37 +9,29 @@
 
     <title>Social Stories</title>
 
-    <!-- Lato Font -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-
-    <!-- Stylesheet -->
-    <link href="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/gallery-materialize.min.opt.css?2667407724680817860" rel="stylesheet">
-
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="public/assets/css/style.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="public/css/main.css" />
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
 
 </head>
 
-<body class="home">
+<body class="blog">
 
-    <!-- Navbar and Header -->
-    <nav id="nav" class="nav-extended">
-        <div class="nav-background">
-
-        </div>
-        <div class="nav-wrapper db">
-            <a href="#" data-activates="nav-mobile" class="button-collapse">
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <h2>
+                <a href="index.html" class="brand-logo">Social Stories</a>
+            </h2>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </a>
-            <a href="/pages/demo" class="brand-logo">Become a member</a>
-            <ul class="bt hide-on-med-and-down">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li class="k">
                     <a href="/pages/join">search</a>
                 </li>
@@ -54,12 +45,34 @@
                     <a href="/pages/get-started">Get started</a>
                 </li>
                 <li>
-                    <a class='dropdown-button' href='#' data-activates='feature-dropdown' data-belowOrigin="true" data-constrainWidth="false">Features
+                    <a class='dropdown-button' href='sidenav' data-activates='feature-dropdown' data-belowOrigin="true" data-constrainWidth="false">Features
                         <i class="material-icons bt">arrow_drop_down</i>
                     </a>
                 </li>
             </ul>
-            <!-- Dropdown Structure -->
+        </div>
+
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+     <li>
+                    <a href="/pages/new-story">New Story</a>
+                </li>
+                <li>
+                    <a href="/pages/stories">Stories</a>
+                </li>
+                <li>
+                    <a href="/pages/bookmarks">Bookmarks</a>
+                </li>
+                <li>
+                    <a href="/pages/profile">Profile</a>
+                </li>
+                <li>
+                    <a href="/pages/sign-out">Sign out</a>
+                </li>
+  </ul>
+        
+        <div class="nav-content">
             <ul id='feature-dropdown' class='dropdown-content'>
                 <li>
                     <a href="/pages/new-story">New Story</a>
@@ -77,193 +90,82 @@
                     <a href="/pages/sign-out">Sign out</a>
                 </li>
             </ul>
-
-
-
-            <div class="nav-header de">
-                <h2>Social Stories</h2>
-            </div>
         </div>
-
-        <!-- Fixed Masonry Filters -->
-        <div class="categories-wrapper af lighten-1">
-            <div class="categories-container" id="categories-container">
-                <ul class="categories db">
-                    <li class="k">
-                        <a href="#all">Home</a>
-                    </li>
-                    <li>
-                        <a href="#culture">Culture</a>
-                    </li>
-                    <li>
-                        <a href="#tech">Tech</a>
-                    </li>
-                    <li>
-                        <a href="#startups">Startups</a>
-                    </li>
-                    <li>
-                        <a href="#self">Self</a>
-                    </li>
-                    <li>
-                        <a href="#politics">Politics</a>
-                    </li>
-                    <li>
-                        <a href="#design">Design</a>
-                    </li>
-                    <li>
-                        <a href="#health">Health</a>
-                    </li>
-                    <li>
-                        <a href="#popular">Popular</a>
-                    </li>
-                    <li>
-                        <a href="#collections">Collections</a>
-                    </li>
-                    <li>
-                        <a href="#food">Food</a>
-                    </li>
-                    <li>
-                        <a href="#film">Film</a>
-                    </li>
-                    <li>
-                        <a href="#gaming">Gaming</a>
-                    </li>
-                </ul>
-            </div>
+        </ul>
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab">
+                    <a href="#all">Home</a>
+                </li>
+                <li class="tab">
+                    <a href="#culture">Culture</a>
+                </li>
+                <li class="tab">
+                    <a href="#tech">Tech</a>
+                </li>
+                <li class="tab">
+                    <a href="#startups">Startups</a>
+                </li>
+                <li class="tab">
+                    <a href="#self">Self</a>
+                </li>
+                <li class="tab">
+                    <a href="#politics">Politics</a>
+                </li>
+                <li class="tab">
+                    <a href="#design">Design</a>
+                </li>
+                <li class="tab">
+                    <a href="#health">Health</a>
+                </li>
+                <li class="tab">
+                    <a href="#popular">Popular</a>
+                </li>
+                <li class="tab">
+                    <a href="#collections">Collections</a>
+                </li>
+                <li class="tab">
+                    <a href="#food">Food</a>
+                </li>
+                <li class="tab">
+                    <a href="#film">Film</a>
+                </li>
+                <li class="tab">
+                    <a href="#gaming">Gaming</a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <ul class="side-nav" id="nav-mobile">
-        <li class="k">
-            <a href="/pages/home">
-                <i class="material-icons"></i>Home</a>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <a href="sass.html">Sass</a>
         </li>
         <li>
-            <a href="/pages/join">
-                <i class="material-icons"></i>Become a member</a>
+            <a href="badges.html">Components</a>
         </li>
         <li>
-            <a href="/pages/blog">
-                <i class="material-icons"></i>Blog</a>
-        </li>
-        <li>
-            <a href="/pages/sign-in">
-                <i class="material-icons"></i>Sign in</a>
-        </li>
-        <li>
-            <a href="/pages/search">
-                <i class="material-icons"></i>search logo</a>
-        </li>
-        <li>
-            <a href="/pages/get-started">
-                <i class="material-icons"></i>Get started</a>
+            <a href="collapsible.html">JavaScript</a>
         </li>
     </ul>
 
-    <!-- Page Layout here -->
-    <div class="container">
-    <div class="row">
-        <div class="col s3">
-            <div class="card horizontal">
-                <div class="card-image">
-                    <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
+    <div id="test1" class="col s12">Test 1</div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div>
 
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                        require little markup to use effectively.</p>
-                </div>
 
-            </div>
-        </div>
-        <div class="col s3">
-            <div class="card horizontal">
-                <div class="card-image">
-                    <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
-
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                        require little markup to use effectively.</p>
-                </div>
-
-            </div>
-        </div>
-        <div class="col s3">
-            <div class="card horizontal">
-                <div class="card-image">
-                    <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
-
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                        require little markup to use effectively.</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = M.Dropdown.init(elems, options);
+      });
     
-        <div class="row">
-            <div class="col s3">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
-
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                            I require little markup to use effectively.</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col s3">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
-
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                            I require little markup to use effectively.</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col s3">
-                <div class="card horizontal">
-                    <div class="card-image">
-                        <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
-
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                            I require little markup to use effectively.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-                <div class="col m12">
-                    <div class="card horizontal">
-                        <div class="card-image">
-                            <img src="http://www.ilikewallpaper.net/ipad-wallpapers/download/2268/Square-Pattern-ipad-wallpaper-ilikewallpaper_com.jpg">
-        
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                                require little markup to use effectively.</p>
-                        </div>
-        
-                    </div>
-                </div>
-
-
-    </div>
-    </div>
+      // Or with jQuery
     
+      $('.dropdown-trigger').dropdown();
+      </script>
 </body>
 
 </html>
