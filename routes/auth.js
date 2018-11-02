@@ -1,15 +1,16 @@
 const router = require("express").Router();
-const passport = require("passport-local");
+//const passport = require("passport-local");
 const flash = require('connect-flash');
 require("../config/passport/passport-init");
 
 
 module.exports = function (app, passport) {
-// TEST ROUTE
-router.get('/test', function (req, res) {
-    // render the page and pass in any flash data if it exists
-    res.send("THIS FUCKING WORKS");
-});
+
+    // TEST ROUTE
+    router.get('/test', function (req, res) {
+        // render the page and pass in any flash data if it exists
+        res.send("THIS FUCKING WORKS");
+    });
     // // Main LogIn Page ========================================================
     router.get('/login/main', function (req, res) {
         // render the page and pass in any flash data if it exists
@@ -22,22 +23,63 @@ router.get('/test', function (req, res) {
         res.render("login");
     });
 
-    // process the login form
-    // app.post('/login', do all our passport stuff here);
+    // router.post('/login',
+    //     passport.authenticate('local'),
+    //     function (req, res) {
+    //         // If this function gets called, authentication was successful.
+    //         // `req.user` contains the authenticated user.
+    //         res.redirect('/test');
+    //         //res.redirect('/users/' + req.user.username);
+    //     });
 
     // SignUp Page ========================================================
     router.get('/signup', function (req, res) {
-
-        // render the page and pass in any flash data if it exists
         res.render("signup");
     });
 
     //process the signup form
-    router.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/test',
-        failureRedirect: '/login'
-    }
-    ));
+    router.post('/signup', function (req, res) {
+        var body = req.body,
+            name = body.name,
+            email = body.email,
+            username = body.username,
+            password = body.password;
+        User.findOne({
+            username: username
+        }, function (err, doc) {
+            if (err) {
+                res.status(500).send('error occured')
+            } else {
+                if (doc) {
+                    res.status(500).send('Username already exists')
+                } else {
+                    User.create
+                    
+                    
+                    var record = new User()
+                    record.username = username;
+                    record.password = record.hashPassword(password)
+                    record.save(function (err, user) {
+                        if (err) {
+                            res.status(500).send('db error')
+                        } else {
+                            res.redirect('/login')
+                        }
+                    })
+                }
+            }
+        })
+    });
+
+
+    router.post('/login', passport.authenticate('local', {
+        failureRedirect: '/login',
+        successRedirect: '/profile',
+    }), function (req, res) {
+        res.send('hey')
+    })
+    return router;
+
 
     // Profile Page ========================================================
     // want protected so you have to be logged in to visit
