@@ -11,6 +11,7 @@ module.exports = function (app) {
     // });
     console.log('inside base route')
     res.send('everything is cool')
+
   });
 
   // Main LogIn Page ========================================================
