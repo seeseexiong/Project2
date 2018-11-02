@@ -7,18 +7,18 @@ const newsapi = new NewsAPI('cd587386616044c48131745138aa4aa0');
 module.exports = function(app) {
   // Get all examples
   app.get("/api/searchUsers", function(req, res) {
-    db.users.findAll({where : {name: req.params.name}}).then(function(dbUsers) {
+    db.User.findAll({where : {name: req.params.name}}).then(function(dbUsers) {
       res.json(dbUsers);
     });
   });
 
   app.get("/api/followedPosts", function(req, res) {
-    db.Posts.findAll({where: {post: req.params.Post}}).then(function(dbPosts) {
+    db.Post.findAll({where: {Post: req.params.Post}}).then(function(dbPosts) {
       res.json(dbPosts);
     });
   });
   app.get("/api/followedLikes", function(req, res) {
-    db.users.findAll({like: req.params.like}).then(function(dbLikes) {
+    db.User.findAll({like: req.params.like}).then(function(dbLikes) {
       res.json(dbLikes);
     });
   });
@@ -32,7 +32,7 @@ module.exports = function(app) {
 
   // Delete an example by id
   app.delete("/api/users/:id", function(req, res) {
-    db.users.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.User.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
       res.json(dbExample);
     });
   });
