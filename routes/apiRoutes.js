@@ -6,25 +6,31 @@ const newsapi = new NewsAPI('cd587386616044c48131745138aa4aa0');
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/searchUsers", function(req, res) {
+  app.get("/api/Users", function(req, res) {
     db.User.findAll({where : {name: req.params.name}}).then(function(dbUsers) {
       res.json(dbUsers);
     });
   });
 
-  app.get("/api/followedPosts", function(req, res) {
+  app.get("/api/Posts", function(req, res) {
     db.Post.findAll({where: {Post: req.params.Post}}).then(function(dbPosts) {
       res.json(dbPosts);
     });
   });
-  app.get("/api/followedLikes", function(req, res) {
+  app.get("/api/Likes", function(req, res) {
     db.User.findAll({like: req.params.like}).then(function(dbLikes) {
       res.json(dbLikes);
     });
   });
+  app.get("/api/Comments", function(req, res) {
+    db.User.findAll({Comment: req.params.Comment}).then(function(dbComment) {
+      res.json(dbComment);
+    });
+  });
+  
 
   // Create a new example
-  app.post("/api/comment", function(req, res) {
+  app.post("/api/Comments", function(req, res) {
     db.Comments.create(req.body).then(function(dbComment) {
       res.json(dbComment);
     });
@@ -32,8 +38,13 @@ module.exports = function(app) {
 
   // Delete an example by id
   app.delete("/api/users/:id", function(req, res) {
-    db.User.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+    db.User.destroy({ where: { id: req.params.id } }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+  app.delete("/api/users/:id", function(req, res) {
+    db.Comment.destroy({ where: { id: req.params.id } }).then(function(dbComment) {
+      res.json(dbComment);
     });
   });
 
@@ -73,6 +84,9 @@ module.exports = function(app) {
       */
       });
   });
+  app.get("/", (req,res) => {
+    db.Comment.findAll()
+  })
 };
 
 

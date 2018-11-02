@@ -2,22 +2,17 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Load index page ========================================================
-  app.get("/", function (req, res) {
-    // db.Example.findAll({}).then(function (dbExamples) {
-    //   res.render("index", {
-    //     msg: "Welcome!",
-    //     examples: dbExamples
-    //   });
-    // });
-    console.log('inside base route')
-    res.send('everything is cool')
-
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../blog.html"));
   });
-
   // Main LogIn Page ========================================================
   app.get('/login/main', function (req, res) {
     // render the page and pass in any flash data if it exists
     res.render("login-main", { message: req.flash('loginMessage') });
+  });
+  // cms route loads cms.html
+  app.get("/cms", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/cms.html"));
   });
 
   // process the login form
