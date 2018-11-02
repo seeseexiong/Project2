@@ -16,45 +16,32 @@
 // };
 
 // User Model for Passport ===============================
+const DT = require('sequelize').Sequelize;
 
-const db = require("../models");
+var sequelize = require("./config/config.json");
+var User = sequelize.define("User", { 
+  // the routeName gets saved as a string
+    //valuation_id     : {type:DT.UUID, defaultValue:DT.UUIDV4},
+    name       : DT.STRING,
+    email      : DT.STRING,
+    username   : DT.STRING,
+    password   : DT.STRING(320), 
 
-//define schema 
-module.exports = function (sequelize, Sequelize) {
+}, 
+{
+  paranoid:true,
+}
+);
 
-  var User = sequelize.define('User', {
-    name: {
-      type: Sequelize.STRING,
-      notEmpty: true
-    },
-    email: {
-      type: Sequelize.STRING,
-      validate: {
-        isEmail: true
-      }
-    },
-    username: {
-      type: Sequelize.TEXT
-    },
-    password: {
-      type: Sequelize.STRING,
-      allowNull: false
-    }
-  },
-    {
-      paranoid: true
-    });
+User.prototype.validPassword = function(password) {
+  
+  console.log("Password from the DB:" , this.password)
+  console.log("Password from the Client :" , password)
+  return (this.password === password)
+}
 
-  User.prototype.validPassword = function (password) {
+// Syncs with DB
+User.sync();
 
-    console.log("Password from the DB:", this.password)
-    console.log("Password from the Client :", password)
-    return (this.password === password)
-  }
-
-  // Syncs with DB
-  User.sync();
-  return User;
-};
-
-
+// Makes the Character Model available for other files (will also create a table)
+module.exports = User;
