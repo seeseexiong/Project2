@@ -1,7 +1,8 @@
 var db = require("../models");
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('cd587386616044c48131745138aa4aa0');
-
+var searchTerm = "sports"
+var favorites = ["business", "sports", "politics"]
 
 
 module.exports = function(app) {
@@ -40,7 +41,7 @@ module.exports = function(app) {
   app.get('/api/topHeadlines', function(req, res) {
     newsapi.v2
       .topHeadlines({
-        category: /*Favorites variable here*/'business',
+        category: (favorites[0] + favorites[1] + favorites[2]),
         language: 'en',
         country: 'us',
       })
@@ -53,12 +54,16 @@ module.exports = function(app) {
           articles: [...]
         }
       */
-      });
+      }).catch(function (err) {
+        res.err(err)
+      })
+      
   });
   app.get('/api/searchHeadlines', function(req, res) {
+
     newsapi.v2
       .topHeadlines({
-        category: /*Search term */'business',
+        category: searchTerm,
         language: 'en',
         country: 'us',
       })
