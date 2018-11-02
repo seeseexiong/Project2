@@ -9,8 +9,8 @@
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "testdb",
+    "password": "root",
+    "database": "social_storydb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
