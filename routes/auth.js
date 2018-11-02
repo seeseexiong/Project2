@@ -1,6 +1,6 @@
 const router = require("express").Router();
-//const passport = require("passport-local");
 const flash = require('connect-flash');
+const User = require("../models").User;
 require("../config/passport/passport-init");
 
 
@@ -53,19 +53,11 @@ module.exports = function (app, passport) {
                 if (doc) {
                     res.status(500).send('Username already exists')
                 } else {
-                    User.create
-                    
-                    
-                    var record = new User()
-                    record.username = username;
-                    record.password = record.hashPassword(password)
-                    record.save(function (err, user) {
-                        if (err) {
-                            res.status(500).send('db error')
-                        } else {
-                            res.redirect('/login')
-                        }
+                    User.create({name, email, username, password})
+                    .then(() => {
+                        res.status(200);
                     })
+                    
                 }
             }
         })

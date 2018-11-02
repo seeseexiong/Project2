@@ -52,10 +52,22 @@
             var newUser = {
                 name: $("#signUpButton [name=name]").val().trim(),
                 email: $("#signUpButton [name=email]").val().trim(),
-                Username: $("#signUpButton [name=username]").val().trim(),
+                username: $("#signUpButton [name=username]").val().trim(),
                 password: $("#signUpButton [name=password]").val().trim()
             };
             console.log(newUser);
+
+            // Send the POST request.
+            $.ajax("/signup", {
+                type: "POST",
+                data: newUser
+            }).then(
+                function () {
+                    console.log("new user added");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
 
         });
     });
