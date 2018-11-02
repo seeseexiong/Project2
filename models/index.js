@@ -18,7 +18,7 @@ if (config.use_env_variable) {
     config
   );
 }
-
+console.log(fs.readdirSync(__dirname))
 fs.readdirSync(__dirname)
   .filter(function(file) {
     return (
@@ -27,6 +27,10 @@ fs.readdirSync(__dirname)
   })
   .forEach(function(file) {
     var model = sequelize.import(path.join(__dirname, file));
+<<<<<<< HEAD
+=======
+    console.log(model.name)
+>>>>>>> 5c5e8f1d097cd3522889d1676f783c3e4690c7fe
     db[model.name] = model;
   });
 
@@ -35,6 +39,7 @@ Object.keys(db).forEach(function(modelName) {
     db[modelName].associate(db);
   }
 });
+console.log(db)
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

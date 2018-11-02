@@ -3,12 +3,23 @@ var db = require("../models");
 module.exports = function (app) {
   // Load index page ========================================================
   app.get("/", function (req, res) {
+<<<<<<< HEAD
     db.Example.findAll({}).then(function (dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
       });
     });
+=======
+    // db.Example.findAll({}).then(function (dbExamples) {
+    //   res.render("index", {
+    //     msg: "Welcome!",
+    //     examples: dbExamples
+    //   });
+    // });
+    console.log('inside base route')
+    res.send('everything is cool')
+>>>>>>> 5c5e8f1d097cd3522889d1676f783c3e4690c7fe
   });
 
   // Main LogIn Page ========================================================
