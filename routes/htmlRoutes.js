@@ -9,6 +9,9 @@ module.exports = function (app) {
     //     examples: dbExamples
     //   });
     // });
+    console.log('inside base route')
+    res.send('everything is cool')
+
   });
 
   // Load example page and pass in an example by id
