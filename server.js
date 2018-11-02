@@ -1,5 +1,5 @@
 /* //------------------------------------------------------------
-  SERVER.JS ----> Setup 
+  SERVER.JS 
 */ //-------------------------------------------------------------
 
 // Require ======================================================
@@ -11,19 +11,16 @@ const exphbs = require("express-handlebars");
 var db = require("./models");
 
 // Express
-
 var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Passport 
-const passport = require('passport');
+const passport = require('./config/passport/passport-init');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 
 // Middleware Config ======================================================
-
-// require('./config/passport')(passport); // pass passport for configuration
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -39,15 +36,16 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
 
 // Routes ======================================================
 require("./routes/apiRoutes")(app, passport);
+require("./routes/auth.js")(app, passport);
 require("./routes/htmlRoutes")(app, passport);
+
+
+//load passport strategies
+require('./config/passport/passport.js');
+
 
 var syncOptions = { force: false };
 
