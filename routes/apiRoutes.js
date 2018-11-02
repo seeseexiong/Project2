@@ -8,18 +8,18 @@ var favorites = ["business", "sports", "politics"]
 module.exports = function(app) {
   // Get all examples
   app.get("/api/searchUsers", function(req, res) {
-    db.User.findAll({where : {name: req.params.name}}).then(function(dbUsers) {
+    db.users.findAll({where : {name: req.params.name}}).then(function(dbUsers) {
       res.json(dbUsers);
     });
   });
 
   app.get("/api/followedPosts", function(req, res) {
-    db.Post.findAll({where: {Post: req.params.Post}}).then(function(dbPosts) {
+    db.Posts.findAll({where: {post: req.params.Post}}).then(function(dbPosts) {
       res.json(dbPosts);
     });
   });
   app.get("/api/followedLikes", function(req, res) {
-    db.User.findAll({like: req.params.like}).then(function(dbLikes) {
+    db.users.findAll({like: req.params.like}).then(function(dbLikes) {
       res.json(dbLikes);
     });
   });
@@ -33,21 +33,23 @@ module.exports = function(app) {
 
   // Delete an example by id
   app.delete("/api/users/:id", function(req, res) {
-    db.User.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.users.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
       res.json(dbExample);
     });
   });
 
   app.get('/api/topHeadlines', function(req, res) {
-    newsapi.v2
+    var resultArray = []
+    for (var i = 0; i < favorites.length; i++){
+    var currentPromise = newsapi.v2
       .topHeadlines({
-        category: (favorites[0] + favorites[1] + favorites[2]),
+        category: favorites[i],
         language: 'en',
         country: 'us',
       })
       .then(response => {
         console.log(response);
-        res.json(response);
+        return response
         /*
         {
           status: "ok",
@@ -57,7 +59,14 @@ module.exports = function(app) {
       }).catch(function (err) {
         res.err(err)
       })
-      
+      resultArray.push(currentPromise)
+    }
+    Promise.all(resultArray).then(headlines => {
+      res.json(headlines)
+
+    }).catch(function(err) {
+      res.json(err)
+    })
   });
   app.get('/api/searchHeadlines', function(req, res) {
 
