@@ -21,11 +21,17 @@ module.exports = function(sequelize, DataTypes) {
 
 var User = sequelize.define("User", { 
   // the routeName gets saved as a string
-    //valuation_id     : {type:DT.UUID, defaultValue:DT.UUIDV4},
-    name       : DataTypes.STRING,
-    email      : DataTypes.STRING,
-    username   : DataTypes.STRING,
-    password   : DataTypes.STRING, 
+    
+    name: DataTypes.STRING, 
+    email: DataTypes.STRING,
+    username: {
+      type: DataTypes.STRING,
+      unique: {
+        args: true,
+        msg: "username already taken"
+      }
+    }, 
+    password: DataTypes.STRING, 
 
 }, 
 {

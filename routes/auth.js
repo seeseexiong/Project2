@@ -1,8 +1,18 @@
 const router = require("express").Router();
 const flash = require('connect-flash');
 const User = require("../models").User;
-require("../config/passport/passport-init");
 
+
+// // route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on 
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
 
 module.exports = function (app, passport) {
 
@@ -11,6 +21,7 @@ module.exports = function (app, passport) {
         // render the page and pass in any flash data if it exists
         res.send("THIS FUCKING WORKS");
     });
+
     // // Main LogIn Page ========================================================
     router.get('/login/main', function (req, res) {
         // render the page and pass in any flash data if it exists
@@ -34,43 +45,66 @@ module.exports = function (app, passport) {
 
     // SignUp Page ========================================================
     router.get('/signup', function (req, res) {
+        console.log("sending html");
         res.render("signup");
     });
 
     //process the signup form
     router.post('/signup', function (req, res) {
+        console.log(req.body);
         var body = req.body,
             name = body.name,
             email = body.email,
             username = body.username,
             password = body.password;
-        User.findOne({
-            username: username
-        }, function (err, doc) {
-            if (err) {
-                res.status(500).send('error occured')
-            } else {
-                if (doc) {
-                    res.status(500).send('Username already exists')
-                } else {
-                    User.create({name, email, username, password})
-                    .then(() => {
-                        res.status(200);
-                    })
-                    
-                }
-            }
+        
+        // User.findOne({
+        //     where: {username: username}
+        // })
+        // .then(user => {
+        //     res.status(500).send('Username already exists');
+        // })
+        // .catch(err => {})
+        
+        User.create({name, email, username, password})
+        .then(user => {
+            console.log("user");
+            res.status(200).end();
         })
+        .catch(err => {
+            console.log("theres an error");
+            res.status(500).send('error occured');
+
+        })
+        
+        // , function (err, doc) {
+        //     if (err) {
+        //         res.status(500).send('error occured')
+        //     } else {
+        //         if (doc) {
+        //             res.status(500).send('Username already exists')
+        //         } else {
+        //             User.create({name, email, username, password})
+        //             .then((user) => {
+        //                 console.log("creating user");
+        //                 console.log(user);
+        //                 res.status(200);
+        //             })
+        //             .catch(err => {})
+                    
+        //         }
+        //     }
+        // })
     });
 
 
-    router.post('/login', passport.authenticate('local', {
-        failureRedirect: '/login',
-        successRedirect: '/profile',
-    }), function (req, res) {
-        res.send('hey')
-    })
-    return router;
+    // router.post('/login', passport.authenticate('local', {
+    //     failureRedirect: '/login',
+    //     successRedirect: '/test',
+    // }), function (req, res) {
+    //     res.send('hey')
+    // })
+   
 
 
     // Profile Page ========================================================
@@ -89,15 +123,7 @@ module.exports = function (app, passport) {
     });
 
     app.use(router);
+    
+    return router;
 };
 
-// // route middleware to make sure a user is logged in
-function isLoggedIn(req, res, next) {
-
-    // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
-        return next();
-
-    // if they aren't redirect them to the home page
-    res.redirect('/');
-}

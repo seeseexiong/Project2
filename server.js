@@ -7,6 +7,10 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
+const passport = require('passport'); 
 
 var db = require("./models");
 
@@ -14,18 +18,18 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-// Passport 
-const passport = require('./config/passport/passport-init');
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
-const flash = require('connect-flash');
-
 // Middleware Config ======================================================
 
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(express.static("public"));
+
+
+// Passport 
+require('./config/passport/passport')(app);
+
+
 
 // Handlebars
 app.engine(

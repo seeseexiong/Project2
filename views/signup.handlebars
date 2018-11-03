@@ -11,7 +11,7 @@
         }} --}}
 
         <!-- SIGNUP FORM -->
-        <form action="/signup" method="post">
+        <form >
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" class="form-control" name="name">
@@ -44,18 +44,18 @@
 
     $(function () {
 
-        $("#signUpButton").on("submit", function (event) {
+        $("form").on("submit", function (event) {
             // Make sure to preventDefault on a submit event.
             event.preventDefault();
 
             // create newUser
             var newUser = {
-                name: $("#signUpButton [name=name]").val().trim(),
-                email: $("#signUpButton [name=email]").val().trim(),
-                username: $("#signUpButton [name=username]").val().trim(),
-                password: $("#signUpButton [name=password]").val().trim()
+                name: $("input[name='name']").val().trim(),
+                email: $("input[name='email']").val().trim(),
+                username: $("input[name='username']").val().trim(),
+                password: $("input[name='password']").val().trim()
             };
-            console.log(newUser);
+            alert(JSON.stringify(newUser));
 
             // Send the POST request.
             $.ajax("/signup", {
