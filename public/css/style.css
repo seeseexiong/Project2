@@ -47,12 +47,21 @@ h3 {
   #index-banner .section {
     top: 10%;
   }
+  .container {
+    width: 95%;
+}
 }
 
 @media only screen and (max-width : 600px) {
   #index-banner .section #gif_container {
     top: 0;
+
   }
+}
+@media only screen and (min-width: 993px) {
+.container {
+    width: 95%;
+}
 }
 
 .icon-block {
