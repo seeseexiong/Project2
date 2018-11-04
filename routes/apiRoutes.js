@@ -23,9 +23,15 @@ module.exports = function(app) {
       res.json(dbLikes);
     });
   });
+  app.get("/api/Comments", function(req, res) {
+    db.User.findAll({Comment: req.params.Comment}).then(function(dbComment) {
+      res.json(dbComment);
+    });
+  });
+  
 
   // Create a new example
-  app.post("/api/comment", function(req, res) {
+  app.post("/api/Comments", function(req, res) {
     db.Comments.create(req.body).then(function(dbComment) {
       res.json(dbComment);
     });
@@ -33,8 +39,13 @@ module.exports = function(app) {
 
   // Delete an example by id
   app.delete("/api/users/:id", function(req, res) {
-    db.users.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+    db.User.destroy({ where: { id: req.params.id } }).then(function(dbUser) {
+      res.json(dbUser);
+    });
+  });
+  app.delete("/api/users/:id", function(req, res) {
+    db.Comment.destroy({ where: { id: req.params.id } }).then(function(dbComment) {
+      res.json(dbComment);
     });
   });
 
@@ -87,6 +98,9 @@ module.exports = function(app) {
       */
       });
   });
+  app.get("/", (req,res) => {
+    db.Comment.findAll()
+  })
 };
 
 
