@@ -10,28 +10,28 @@ const exphbs = require("express-handlebars");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
+const path = require('path');
 const passport = require('passport'); 
 
-var db = require("./models");
-
-// Express
-var app = express();
+// Port and Models
+var models = require("./models");
 var PORT = process.env.PORT || 3000;
 
-// Middleware Config ======================================================
 
-//app.use(bodyParser.urlencoded({ extended: false }));
+// Express --------------------------
+var app = express();
+var app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cookieParser()); // read cookies (needed for auth)
-app.use(express.static("public"));
 
 
-// Passport 
-//require('./config/passport/passport')(app);
+// Passport --------------------------
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
 
-
-// Handlebars
+// Handlebars --------------------------
 app.engine(
   "handlebars",
   exphbs({
@@ -42,14 +42,19 @@ app.set("view engine", "handlebars");
 
 
 // Routes ======================================================
+<<<<<<< HEAD
 require("./routes/apiRoutes")(app);
 //require("./routes/auth.js")(app, passport);
 require("./routes/htmlRoutes")(app);
+=======
+require("./routes/apiRoutes")(app, passport);
+require("./routes/auth.js")(app, passport);
+require("./routes/htmlRoutes")(app, passport);
+>>>>>>> ef109913fef29ac5d2fc7b1aee95e85ea6890252
 
 
 //load passport strategies
-//require('./config/passport/passport.js');
-
+require('./config/passport/passport.js')(passport, models.user);
 
 var syncOptions = { force: false };
 
@@ -60,16 +65,12 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ==========================================
-db.sequelize.sync(syncOptions).then(function() {
+models.sequelize.sync(syncOptions).then(function() {
   console.log(process.env.NODE_ENV)
   app.listen(PORT, function() {
     console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT,
-    );
+      "Some badass people starting baddass servers on: http://localhost:" + PORT);
     
   });
 });
 
-//module.exports = app;
