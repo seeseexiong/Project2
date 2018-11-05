@@ -51,8 +51,6 @@
                                     <i class="material-icons prefix">verified_user</i>
                                     <input id="usernameLogin" type="text" name="username" class="validate">
                                     <label for="usernameLogin"> Username</label>
-                                    {{!--
-                                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> --}}
                                 </div>
                                 <!-- Password -->
                                 <div class="input-field col s12">
@@ -69,11 +67,10 @@
                             <!-- link to signup -->
                             <div class="center row">
                                 <p id="loginLink">Do you need an account?
-                                    <a href="/signup">Signup here!</a>
+                                        <a class="modal-trigger " href="#signUpModal" onclick="$('#signUpModal').modal('open');">Sign Up</a>
                                 </p>
                             </div>
                         </div>
-
                     </div>
                  
                 </li>
@@ -112,7 +109,6 @@
                                     <i class="material-icons prefix">verified_user</i>
                                     <input id="usernameInput" type="text" name="username" class="validate" required>
                                     <label for="usernameInput"> Username</label>
-                                    {{!-- <span class="helper-text" data-error="wrong" data-success="right">Helper text</span> --}}
                                 </div>
                                <!-- password -->
                                 <div class="input-field col s6">
@@ -128,7 +124,7 @@
                     
                             <!-- link to login -->
                             <div class="center row">
-                                <p id="loginLink">Already have an account? <a href="/signin">Login here!</a></p>
+                                <p id="loginLink">Already have an account? <a class="modal-trigger " href="#signInModal" onclick="$('#signInModal').modal('open');">Sign In</a></p>
                             </div>
                         </div>
                     </div>
@@ -627,7 +623,7 @@
         $(document).ready(function () {
 
             $('#signInModal').modal();
-            $('##signUpModal').modal();
+            $('#signUpModal').modal();
             $('#modal1').modal();
             $('#modal2').modal();
 
