@@ -1,48 +1,17 @@
 var db = require("../models");
 var path = require("path");
-var server = require("/config.json")
+
 
 module.exports = function (app) {
-  // Load index page ========================================================
+  // Load Main page ========================================================
   app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../index.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // Main LogIn Page ========================================================
-  app.get('/login/main', function (req, res) {
-    // render the page and pass in any flash data if it exists
-    res.render("login-main", { message: req.flash('loginMessage') });
+  // Friends-followers.html
+  app.get("/friend", function(req, res) {
+    res.sendFile(path.join(__dirname, "../friend-followers2.html"));
   });
-  // cms route loads cms.html
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
-  });
-
-  // process the login form
-  // app.post('/login', do all our passport stuff here);
-
-  // Current Users Login ========================================================
-  app.get('/login', function (req, res) {
-    // render the page and pass in any flash data if it exists
-    res.render("login", { message: req.flash('loginMessage') });
-  });
-
-  // process the login form
-  // app.post('/login', do all our passport stuff here);
-
-  // SignUp Page ========================================================
-  app.get('/signup', function (req, res) {
-
-    // render the page and pass in any flash data if it exists
-    res.render("signup", { message: req.flash('signupMessage') });
-  });
-
-  // LogOut Page ========================================================
-  app.get('/logout', function (req, res) {
-    req.logout();
-    res.redirect('/');
-  });
-
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {

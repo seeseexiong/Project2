@@ -2,19 +2,19 @@ var db = require("../models");
 
 
 module.exports = (app) => {
-    app.get("/api/User", (req, res) => {
-      db.User.findAll({}).then((dbUser) => {
-        res.json(dbUser);
+    app.get("/api/user", (req, res) => {
+      db.user.findAll({}).then((dbuser) => {
+        res.json(dbuser);
       });
     });
   
-    app.get("/api/authors/:id", (req, res) => {
-      db.User.findOne({
+    app.get("/api/user/:id", (req, res) => {
+      db.user.findOne({
         where: {
           id: req.params.id
         }
-      }).then((dbUser) => {
-        res.json(dbUser);
+      }).then((dbuser) => {
+        res.json(dbuser);
       });
     });
   };
