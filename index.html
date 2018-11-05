@@ -1,94 +1,151 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Blog</title>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Stories</title>
 
-    <!-- Lato Font -->
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-
-    <!-- Stylesheet -->
-    <link href="//cdn.shopify.com/s/files/1/1775/8583/t/1/assets/gallery-materialize.min.opt.css?2667407724680817860" rel="stylesheet">
-
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="public/assets/css/style.css" />
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
 </head>
 
-  <body class="blog">
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Social Stories</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"><i class="fas fa-search"></i></a></li>
+        <li><a href="#">Log in</a></li>
+        <li><a href="#">Get started</a></li>
+        <li>
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger' href='#' data-target='dropdown1'>Profile</a>
 
-  <!-- Navbar and Header -->
-  <nav id="nav" class="nav-extended">
-    <div class="nav-background">
-      
-    </div>
-    <div class="nav-wrapper db">
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-      <a href="/pages/demo" class="brand-logo">Become a member</a>
-      <ul class="bt hide-on-med-and-down">
-        <li class="k"><a href="/pages/join">search</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="/pages/sign-in">Sign in</a></li>
-        <li><a href="/pages/get-started">Get started</a></li>
-      <li><a class='dropdown-button' href='#' data-activates='feature-dropdown' data-belowOrigin="true" data-constrainWidth="false">Features<i class="material-icons bt">arrow_drop_down</i></a></li>
-      </ul>
-      <!-- Dropdown Structure -->
-      <ul id='feature-dropdown' class='dropdown-content'>
-        <li><a href="/pages/new-story">New Story</a></li>
-        <li><a href="/pages/stories">Stories</a></li>
-        <li><a href="/pages/bookmarks">Bookmarks</a></li>
-        <li><a href="/pages/profile">Profile</a></li>
-        <li><a href="/pages/sign-out">Sign out</a></li>
-      </ul>
-
-
-
-      <div class="nav-header de">
-        <h2>Social Stories</h2>
-      </div>
-    </div>
-
-    <!-- Fixed Masonry Filters -->
-    <div class="categories-wrapper af lighten-1">
-      <div class="categories-container" id="categories-container">
-        <ul class="categories db">
-          <li class="k"><a href="#all">Home</a></li>
-          <li><a href="#culture">Culture</a></li>
-          <li><a href="#tech">Tech</a></li>
-          <li><a href="#startups">Startups</a></li>
-          <li><a href="#self">Self</a></li>
-          <li><a href="#politics">Politics</a></li>
-          <li><a href="#design">Design</a></li>
-          <li><a href="#health">Health</a></li>
-          <li><a href="#popular">Popular</a></li>
-          <li><a href="#collections">Collections</a></li>
-          <li><a href="#food">Food</a></li>
-          <li><a href="#film">Film</a></li>
-          <li><a href="#gaming">Gaming</a></li>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="#!">three</a></li>
+          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
         </ul>
-      </div>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-  <ul class="side-nav" id="nav-mobile">
-    <li class="k"><a href="/pages/home"><i class="material-icons"></i>Home</a></li>
-    <li><a href="/pages/join"><i class="material-icons"></i>Become a member</a></li>
-    <li><a href="/pages/blog"><i class="material-icons"></i>Blog</a></li>
-    <li><a href="/pages/sign-in"><i class="material-icons"></i>Sign in</a></li>
-    <li><a href="/pages/search"><i class="material-icons"></i>search logo</a></li>
-    <li><a href="/pages/get-started"><i class="material-icons"></i>Get started</a></li>
-  </ul>
+  <div id="navbar" class="center" role="navigation">
+    <a class="center" href="#home">Home</a>
+    <a class="center" href="#news">Culture</a>
+    <a class="center" href="#contact">Tech</a>
+    <a class="center" href="#home">Politics</a>
+    <a class="center" href="#news">Design</a>
+    <a class="center" href="#contact">Health</a>
+    <a class="center" href="#home">Film</a>
+    <a class="center" href="#news">Sports</a>
+    <a class="center" href="#contact">Cooking</a>
+    <a class="center" href="#home">Gaming</a>
+    <a class="center" href="#news">Art</a>
+    <a class="center" href="#contact">Style</a>
+  </div>
 
-    <!-- News -->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <div class="row">
+          <div class="col s7">
+            <h3 class="header left-align col col-s4" id="welcome">Welcome to Social Stories, where words matter.</h3>
+          </div>
+
+          <p class="header left-align col s6 light" id="mission_statement">We’ll deliver the best stories and ideas on
+            the topics you care about most straight to your homepage, app, or inbox.</p>
+        </div>
+        <div class="row">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect grey darken-4">Get
+            started</a>
+          <a href="http://materializecss.com/getting-started.html" id="download-button-2" class="btn-large waves-effect N/A transparent">Learn
+            more</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="images/background_1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container" id="gif_container">
+      </div>
+    </div>
+    <div class="parallax" id="gif"><img src="images/socialstories.gif" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer grey lighten-5">
+    <div class="container">
+      <div class="row">
+        <div class="col 1 s12">
+          <p class="concept_text">Ideas and perspectives you won’t find anywhere else.
+            Social Stories taps into the brains of the world’s most insightful writers, thinkers, and storytellers to
+            bring you the smartest takes on topics that matter. So whatever your interest, you can always find fresh
+            thinking and unique perspectives.</p>
+        </div>
+        <div class="col l3 s12">
+
+        </div>
+        <div class="col l3 s12">
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="footer-copyright">
+      <div class="container">
+        Made by Purple Parrots
+      </div>
+    </div>
+  </footer>
+  <script>
+
+    // When the user scrolls the page, execute myFunction 
+    window.onscroll = function () { myFunction() };
+
+    // Get the navbar
+    var navbar = document.getElementById("navbar");
+
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+
+  </script>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+</body>
+
+</html>
