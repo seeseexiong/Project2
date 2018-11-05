@@ -1,50 +1,18 @@
 "use strict";
-// module.exports = (sequelize, DataTypes) => {
-//   var User = sequelize.define('User', {
-//     name: DataTypes.STRING,
-//     email: DataTypes.STRING,
-//     username: DataTypes.STRING,
-//     password: DataTypes.STRING
-//   }, {
-//       classMethods: {
-//         associate: (models) => {
-//           // associations can be defined here
-//         }
-//       }
-//     });
-//   return User;
-// };
+module.exports = function(sequelize, Sequelize) {
 
-// User Model for Passport ===============================
+	var User = sequelize.define('user', {
+		id: { autoIncrement: true, primaryKey: true, type: Sequelize.INTEGER},
+		name: { type: Sequelize.STRING,notEmpty: true},
+		email: { type:Sequelize.STRING, validate: {isEmail:true} },
+		username: {type:Sequelize.TEXT},
+		password : {type: Sequelize.STRING,allowNull: false }, 
+		last_login: {type: Sequelize.DATE},
+        status: {type: Sequelize.ENUM('active','inactive'),defaultValue:'active' },
+    profileImg: {type: Sequelize.STRING}
 
-module.exports = function(sequelize, DataTypes) {
+});
 
-var User = sequelize.define("User", { 
-  // the routeName gets saved as a string
-    
-    name: DataTypes.STRING, 
-    email: DataTypes.STRING,
-    username: {
-      type: DataTypes.STRING,
-      unique: {
-        args: true,
-        msg: "username already taken"
-      }
-    }, 
-    password: DataTypes.STRING, 
+	return User;
 
-}, 
-{
-  paranoid:true,
 }
-);
-
-User.prototype.validPassword = function(password) {
-  
-  console.log("Password from the DB:" , this.password)
-  console.log("Password from the Client :" , password)
-  return (this.password === password)
-}
-
-return User;
-};
