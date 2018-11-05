@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/seeseexiong/Project2#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
@@ -33,6 +34,7 @@
     "newsapi": "^2.4.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "sequelize": "^4.41.0"
   }
 }
