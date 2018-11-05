@@ -27,7 +27,7 @@ app.use(express.static("public"));
 
 
 // Passport 
-require('./config/passport/passport')(app);
+//require('./config/passport/passport')(app);
 
 
 
@@ -43,12 +43,12 @@ app.set("view engine", "handlebars");
 
 // Routes ======================================================
 require("./routes/apiRoutes")(app, passport);
-require("./routes/auth.js")(app, passport);
+//require("./routes/auth.js")(app, passport);
 require("./routes/htmlRoutes")(app, passport);
 
 
 //load passport strategies
-require('./config/passport/passport.js');
+//require('./config/passport/passport.js');
 
 
 var syncOptions = { force: false };

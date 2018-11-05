@@ -42,11 +42,11 @@ module.exports = function (app) {
   // Profile Page ========================================================
   // want protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
-  app.get('/profile', isLoggedIn, function (req, res) {
-    res.render('profile.handlebars', {
-      user: req.user // get the user out of session and pass to template
-    });
-  });
+  // app.get('/profile', isLoggedIn, function (req, res) {
+  //   res.render('profile.handlebars', {
+  //     user: req.user // get the user out of session and pass to template
+  //   });
+  // });
 
   // LogOut Page ========================================================
   app.get('/logout', function (req, res) {
