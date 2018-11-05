@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        .logo {
+            display: inline;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -21,37 +28,95 @@
         <!-- New Story Nav -->
         <div class="row">
             <div class="col s4">
-                <span class="flex">
-                    <i class="material-icons large">font_download</i>
-                    <h5>Social Story</h5>
+                <span class="logo">
+                    <i class="material-icons large" style="display:inline">font_download</i>
+                    <h5 style="display:inline">Social Story</h5>
                 </span>
             </div>
             <div class="col s8">
                 <div class="right">
                     <a class="waves-effect waves-light btn-small">Button</a>
-                    <a class="waves-effect waves-light btn-small">Button <span class="new badge">4</span></a>
-                    <i class="material-icons">account_circle</i>
+                    <a class="waves-effect waves-light btn-small">Button<span class="new badge">4</span></a>
+                    <a class="waves-effect waves-light btn-small">Button <i class="material-icons">person_outline</i></a>
                 </div>
             </div>
         </div>
+
+        <!-- Username Draft -->
         <div class="row">
-            <div class="col s12"></div>
-            <i class="material-icons">account_circle</i>
-            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+            <div class="col s12">
+                <i class="material-icons">account_circle</i>
+
+
+            </div>
 
         </div>
+        <!-- Post Title -->
         <div class="row">
+            <div class="col s1">
+                <a class="btn-floating btn-large waves-effect waves-light required"><i class="material-icons">add</i></a>
+            </div>
+            <div class="input-field col s11">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Title</label>
+            </div>
 
         </div>
-    </div>
+        <!-- Post Body -->
+        <div class="row">
+            <div class="col s1">
+                <div id="actionButton" class="fixed-action-btn horizontal direction-top direction-left" style="position: absolute; display: inline-block; right: 24px">
+                    <a class="btn-floating btn-large red">
+                        <i class="large material-icons">mode_edit</i>
+                    </a>
+                    <ul>
+                        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input-field col s11">
+                <textarea id="textarea2" class="materialize-textarea"></textarea>
+                <label for="textarea2">Tell your story...</label>
+            </div>
+        </div>
+
+        
 
 
 
-    <!--  Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="public/js/materialize.js"></script>
-    <script src="public/js/init.js"></script>
 
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.fixed-action-btn');
+                var instances = M.FloatingActionButton.init(elems, {
+                    direction: 'left'
+                });
+            });
+
+
+            // $(document).ready(function () {
+            //     var instance = M.FloatingActionButton.getInstance(elem);
+            //     instance.close();
+
+            //     $('#actionButton').floatingActionButton({
+            //         direction: 'bottom',
+            //         hoverEnabled: false,
+            //         isOpen: false
+            //     })
+
+            // });
+
+
+        </script>
+        <!--  Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="public/js/materialize.js"></script>
+        <script src="public/js/init.js"></script>
 </body>
 
 </html>
