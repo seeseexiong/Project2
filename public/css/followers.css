@@ -37,3 +37,11 @@ h2 {
     margin-bottom: 0;
 }
 
+.img-size {
+    height: 20px;
+}
+
+.rounded{
+    border-radius: 190px;
+    width: 120px;
+}
