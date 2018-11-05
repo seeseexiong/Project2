@@ -3756,7 +3756,7 @@ table span.badge {
     right: auto;
   }
   .row .col.m7 {
-    width: 58.3333333333%;
+    /* width: 58.3333333333%; */
     margin-left: auto;
     left: auto;
     right: auto;
