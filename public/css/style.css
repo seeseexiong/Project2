@@ -6,6 +6,10 @@ section {
     min-height: 100%;
 }
 
+header {
+  margin-left: 2%;
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
@@ -28,7 +32,6 @@ h3 {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
 }
   .parallax-container .section {
     width: 100%;

@@ -27,7 +27,20 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Log in</a>
+                    <a href="#modal1" onclick="$('#modal1').modal('open');">Log in</a>
+                      <!-- Modal Trigger -->
+                   
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4>Modal Header</h4>
+                                <p>A bunch of text</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                            </div>
+                        </div>
                 </li>
                 <li>
                     <a href="#">Get started</a>
@@ -112,8 +125,21 @@
                         app, or inbox.</p>
                 </div>
                 <div class="row">
-                    <a href="/join" id="download-button" class="btn-large waves-effect grey darken-4">Get started
-                    </a>
+                    <a href="#modal1" id="download-button" class="btn-large waves-effect grey darken-4" onclick="$('#modal1').modal('open');">Get started</a>
+
+                    <!-- Modal Trigger -->
+                   
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Modal Header</h4>
+                            <p>A bunch of text</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
+                    </div>
                     <a href="#headlineNews" id="download-button-2" class="btn-large waves-effect N/A transparent">Take a peek</a>
                 </div>
                 <br>
@@ -137,6 +163,9 @@
             <img src="public/images/socialstories.gif" alt="Unsplashed background img 3">
         </div>
     </div>
+
+    <!-- // Jump to link from "take a peek" -->
+
     <div id="headlineNews"></div>
 
 
@@ -144,13 +173,63 @@
 
 
     <div class="row">
+        <header>
+            <h5>Featured for members</h5>
+        </header>
 
         <div class="col s8">
             <div class="col s12 m7">
-                <h2 class="header">Horizontal Card</h2>
+
                 <div class="card horizontal">
                     <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal2" >Modal</a>
+
+                            <!-- Modal Structure -->
+                            <div id="modal2" class="modal">
+                                <div class="modal-content">
+                                    <h4>Cool story here</h4>
+                                    <p>A bunch of text</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header>
+                <h5>Culture</h5>
+            </header>
+            <hr>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
@@ -163,10 +242,28 @@
                 </div>
             </div>
             <div class="col s12 m7">
-                <h2 class="header">Horizontal Card</h2>
                 <div class="card horizontal">
                     <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header>
+                <h5>Politics</h5>
+            </header>
+            <hr>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
@@ -179,10 +276,9 @@
                 </div>
             </div>
             <div class="col s12 m7">
-                <h2 class="header">Horizontal Card</h2>
                 <div class="card horizontal">
                     <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
+                        <img src="">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
@@ -194,16 +290,91 @@
                     </div>
                 </div>
             </div>
-            
+            <header>
+                <h5>Technology</h5>
+            </header>
+            <hr>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header>
+                <h5>Sports</h5>
+            </header>
+            <hr>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
+        <!-- Blogger news -->
+
+
         <div class="col s4">
-            
+
+            <header>
+                <h5>Popular social stories</h5>
+            </header>
+
             <div class="col s12 m7">
-                <h2 class="header">Horizontal Card</h2>
+
                 <div class="card horizontal">
                     <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
+                        <img src="">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
@@ -216,10 +387,75 @@
                 </div>
             </div>
             <div class="col s12 m7">
-                <h2 class="header">Horizontal Card</h2>
+
                 <div class="card horizontal">
                     <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
@@ -276,10 +512,15 @@
                 navbar.classList.remove("sticky");
             }
         }
-        $(document).ready(function () {
-            // Add smooth scrolling to all links
-            $("a").on('click', function (event) {
 
+        // smooth scroll link=======================
+
+        $(document).ready(function () {
+            // Add smooth scrolling to the take a peek link
+
+            $("#download-button-2").on('click', function (event) {
+
+                console.log('slow scroll callback called')
                 // Make sure this.hash has a value before overriding default behavior
                 if (this.hash !== "") {
                     // Prevent default anchor click behavior
@@ -298,14 +539,26 @@
                         window.location.hash = hash;
                     });
                 } // End if
+                return false;
             });
         });
+
+        // modal open
+
+        $(document).ready(function () {
+            
+
+            $('#modal1').modal();
+            $('#modal2').modal();
+
+        });
+        
 
 
     </script>
 
     <!--  Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script src="public/js/materialize.js"></script>
     <script src="public/js/init.js"></script>
 
