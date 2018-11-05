@@ -2,149 +2,312 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Social Stories</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Social Stories</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-    crossorigin="anonymous">
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="public/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Social Stories</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#"><i class="fas fa-search"></i></a></li>
-        <li><a href="#">Log in</a></li>
-        <li><a href="#">Get started</a></li>
-        <li>
-        <!-- Dropdown Trigger -->
-        <a class='dropdown-trigger' href='#' data-target='dropdown1'>Profile</a>
 
-        <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content'>
-          <li><a href="#!">one</a></li>
-          <li><a href="#!">two</a></li>
-          <li class="divider" tabindex="-1"></li>
-          <li><a href="#!">three</a></li>
-          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-        </ul>
-        </li>
-      </ul>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">Social Stories</a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Log in</a>
+                </li>
+                <li>
+                    <a href="#">Get started</a>
+                </li>
+                <li>
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-trigger' href='#' data-target='dropdown1'>Profile</a>
 
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-  <div id="navbar" class="center" role="navigation">
-    <a class="center" href="#home">Home</a>
-    <a class="center" href="#news">Culture</a>
-    <a class="center" href="#contact">Tech</a>
-    <a class="center" href="#home">Politics</a>
-    <a class="center" href="#news">Design</a>
-    <a class="center" href="#contact">Health</a>
-    <a class="center" href="#home">Film</a>
-    <a class="center" href="#news">Sports</a>
-    <a class="center" href="#contact">Cooking</a>
-    <a class="center" href="#home">Gaming</a>
-    <a class="center" href="#news">Art</a>
-    <a class="center" href="#contact">Style</a>
-  </div>
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li>
+                            <a href="#!">one</a>
+                        </li>
+                        <li>
+                            <a href="#!">two</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a href="#!">three</a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <i class="material-icons">view_module</i>four</a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <i class="material-icons">cloud</i>five</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
 
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <div class="row">
-          <div class="col s7">
-            <h3 class="header left-align col col-s4" id="welcome">Welcome to Social Stories, where words matter.</h3>
-          </div>
-
-          <p class="header left-align col s6 light" id="mission_statement">We’ll deliver the best stories and ideas on
-            the topics you care about most straight to your homepage, app, or inbox.</p>
+            <ul id="nav-mobile" class="sidenav">
+                <li>
+                    <a href="#">Social Stories</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Log in</a>
+                </li>
+                <li>
+                    <a href="#">Get started</a>
+                </li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
         </div>
-        <div class="row">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect grey darken-4">Get
-            started</a>
-          <a href="http://materializecss.com/getting-started.html" id="download-button-2" class="btn-large waves-effect N/A transparent">Learn
-            more</a>
-        </div>
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="images/background_1.jpg" alt="Unsplashed background img 1"></div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container" id="gif_container">
-      </div>
-    </div>
-    <div class="parallax" id="gif"><img src="images/socialstories.gif" alt="Unsplashed background img 3"></div>
-  </div>
-
-  <footer class="page-footer grey lighten-5">
-    <div class="container">
-      <div class="row">
-        <div class="col 1 s12">
-          <p class="concept_text">Ideas and perspectives you won’t find anywhere else.
-            Social Stories taps into the brains of the world’s most insightful writers, thinkers, and storytellers to
-            bring you the smartest takes on topics that matter. So whatever your interest, you can always find fresh
-            thinking and unique perspectives.</p>
-        </div>
-        <div class="col l3 s12">
-
-        </div>
-        <div class="col l3 s12">
-
-        </div>
-      </div>
+    </nav>
+    <div id="navbar" class="center" id="allNews" role="navigation">
+        <a class="center" href="#home">Home</a>
+        <a class="center" href="#news">Culture</a>
+        <a class="center" href="#contact">Tech</a>
+        <a class="center" href="#home">Politics</a>
+        <a class="center" href="#news">Design</a>
+        <a class="center" href="#contact">Health</a>
+        <a class="center" href="#home">Film</a>
+        <a class="center" href="#news">Sports</a>
+        <a class="center" href="#contact">Cooking</a>
+        <a class="center" href="#home">Gaming</a>
+        <a class="center" href="#news">Art</a>
+        <a class="center" href="#contact">Style</a>
     </div>
 
+    <!-- Home page introduction banner ============================================================================ -->
 
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col s7">
+                        <h3 class="header left-align col col-s4" id="welcome">Welcome to Social Stories, where words matter.</h3>
+                    </div>
 
-    <div class="footer-copyright">
-      <div class="container">
-        Made by Purple Parrots
-      </div>
+                    <p class="header left-align col s6 light" id="mission_statement">We’ll deliver the best stories and ideas on the topics you care about most straight to your homepage,
+                        app, or inbox.</p>
+                </div>
+                <div class="row">
+                    <a href="/join" id="download-button" class="btn-large waves-effect grey darken-4">Get started
+                    </a>
+                    <a href="#headlineNews" id="download-button-2" class="btn-large waves-effect N/A transparent">Take a peek</a>
+                </div>
+                <br>
+                <br>
+
+            </div>
+        </div>
+        <div class="parallax">
+            <img src="/public/images/background_1.jpg" alt="Unsplashed background img 1">
+        </div>
     </div>
-  </footer>
-  <script>
 
-    // When the user scrolls the page, execute myFunction 
-    window.onscroll = function () { myFunction() };
+    <!-- Gif Banner ========================================================================================== -->
 
-    // Get the navbar
-    var navbar = document.getElementById("navbar");
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container" id="gif_container">
+            </div>
+        </div>
+        <div class="parallax" id="gif">
+            <img src="public/images/socialstories.gif" alt="Unsplashed background img 3">
+        </div>
+    </div>
+    <div id="headlineNews"></div>
 
-    // Get the offset position of the navbar
-    var sticky = navbar.offsetTop;
 
-    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
+    <!-- Headline News ================================================================================= -->
 
-  </script>
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+    <div class="row">
+
+        <div class="col s8">
+            <div class="col s12 m7">
+                <h2 class="header">Horizontal Card</h2>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+                <h2 class="header">Horizontal Card</h2>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+                <h2 class="header">Horizontal Card</h2>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="col s4">
+            
+            <div class="col s12 m7">
+                <h2 class="header">Horizontal Card</h2>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+                <h2 class="header">Horizontal Card</h2>
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- Footer container ======================================================================================= -->
+    <footer class="page-footer grey lighten-5">
+        <div class="container">
+            <div class="row">
+                <div class="col 1 s12">
+                    <p class="concept_text">Ideas and perspectives you won’t find anywhere else. Social Stories taps into the brains of the world’s
+                        most insightful writers, thinkers, and storytellers to bring you the smartest takes on topics that
+                        matter. So whatever your interest, you can always find fresh thinking and unique perspectives.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by Purple Parrots
+            </div>
+        </div>
+    </footer>
+    <script>
+
+        // When the user scrolls the page, execute myFunction 
+        window.onscroll = function () { myFunction() };
+
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
+
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+
+
+    </script>
+
+    <!--  Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="public/js/materialize.js"></script>
+    <script src="public/js/init.js"></script>
 
 </body>
 

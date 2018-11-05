@@ -1,0 +1,13 @@
+@font-face {
+  font-family: Graphers Blog;
+  src: url(../font/Graphers\ Blog.ttf); }
+h2 {
+  font-family: 'Graphers Blog';
+  margin: 2em;
+  color: rgba(0, 0, 0, 0.801); }
+
+.ul.tabs.tabs-transparent {
+  margin: 2em; }
+
+li {
+  color: rgba(0, 0, 0, 0.486) !important; }
