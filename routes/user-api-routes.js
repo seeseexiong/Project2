@@ -17,22 +17,5 @@ module.exports = (app) => {
         res.json(dbUser);
       });
     });
-  
-    app.post("/api/authors", (req, res) => {
-      db.User.create(req.body).then((dbUser) => {
-        res.json(dbUser);
-      });
-    });
-  
-    app.delete("/api/authors/:id", (req, res) => {
-      db.User.destroy({
-        where: {
-          id: req.params.id
-        }
-      }).then((dbUser) => {
-        res.json(dbUser);
-      });
-    });
-  
   };
   

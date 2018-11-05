@@ -1,5 +1,6 @@
 var db = require("../models");
 var path = require("path");
+var server = require("/config.json")
 
 module.exports = function (app) {
   // Load index page ========================================================
@@ -35,18 +36,6 @@ module.exports = function (app) {
     // render the page and pass in any flash data if it exists
     res.render("signup", { message: req.flash('signupMessage') });
   });
-
-  // process the signup form
-  // app.post('/signup', do all our passport stuff here);
-
-  // Profile Page ========================================================
-  // want protected so you have to be logged in to visit
-  // we will use route middleware to verify this (the isLoggedIn function)
-  // app.get('/profile', isLoggedIn, function (req, res) {
-  //   res.render('profile.handlebars', {
-  //     user: req.user // get the user out of session and pass to template
-  //   });
-  // });
 
   // LogOut Page ========================================================
   app.get('/logout', function (req, res) {
