@@ -1,34 +1,75 @@
 {{!-- SIGN UP FORM --}}
 <div class="container">
 
-<div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-6 col-sm-offset-3">
 
-    <h1><span class="fa fa-sign-in"></span> Signup</h1>
+        <h1><span class="fa fa-sign-in"></span> Signup</h1>
 
-    <!-- show any messages that come back with authentication -->
-    {{!-- {{#if (message.length > 0) {
+        <!-- show any messages that come back with authentication -->
+        {{!-- {{#if (message.length > 0) {
         <div class="alert alert-danger">{{message}}</div>}
-    }} --}}
+        }} --}}
 
-    <!-- LOGIN FORM -->
-    <form action="/signup" method="post">
-        <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" name="email">
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password">
-        </div>
+        <!-- SIGNUP FORM -->
+        <form >
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email">
+            </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
 
-        <button type="submit" class="btn btn-warning btn-lg">Signup</button>
-    </form>
+            <button id="signUpButton" type="submit" name="newUser" class="btn btn-warning btn-lg">Signup</button>
+        </form>
 
-    <hr>
+        <hr>
 
-    <p>Already have an account? <a href="/login">Login</a></p>
-    <p>Or go <a href="/login/main">home</a>.</p>
+        <p>Already have an account? <a href="/login">Login</a></p>
+        <p>Or go <a href="/login/main">home</a>.</p>
+
+    </div>
 
 </div>
+<script type="text/javascript">
 
-</div>
+    $(function () {
+
+        $("form").on("submit", function (event) {
+            // Make sure to preventDefault on a submit event.
+            event.preventDefault();
+
+            // create newUser
+            var newUser = {
+                name: $("input[name='name']").val().trim(),
+                email: $("input[name='email']").val().trim(),
+                username: $("input[name='username']").val().trim(),
+                password: $("input[name='password']").val().trim()
+            };
+            alert(JSON.stringify(newUser));
+
+            // Send the POST request.
+            $.ajax("/signup", {
+                type: "POST",
+                data: newUser
+            }).then(
+                function () {
+                    console.log("new user added");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+
+        });
+    });
+
+</script>
