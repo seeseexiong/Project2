@@ -5,6 +5,7 @@ var searchTerm = "sports"
 var favorites = ["business", "sports", "politics"]
 
 
+
 module.exports = function(app) {
   // Get all examples
   app.get("/api/searchUsers", function(req, res) {
@@ -84,6 +85,24 @@ module.exports = function(app) {
     newsapi.v2
       .topHeadlines({
         category: searchTerm,
+        language: 'en',
+        country: 'us',
+      })
+      .then(response => {
+        console.log(response);
+        res.json(response);
+        /*
+        {
+          status: "ok",
+          articles: [...]
+        }
+      */
+      });
+  });
+  app.get('/api/searchHeadlines', function(req, res) {
+    newsapi.v2
+      .topHeadlines({
+        category: /*Search term */'business',
         language: 'en',
         country: 'us',
       })

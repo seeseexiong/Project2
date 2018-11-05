@@ -5,6 +5,8 @@ module.exports = function (app) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../blog.html"));
   });
+<<<<<<< HEAD
+=======
   // Main LogIn Page ========================================================
   app.get('/login/main', function (req, res) {
     // render the page and pass in any flash data if it exists
@@ -52,6 +54,7 @@ module.exports = function (app) {
     res.redirect('/');
   });
 
+>>>>>>> ed14cfdd2ab868fe40f00432931c0e92da72443d
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
@@ -68,14 +71,3 @@ module.exports = function (app) {
   });
 
 };
-
-// route middleware to make sure a user is logged in
-function isLoggedIn(req, res, next) {
-
-  // if user is authenticated in the session, carry on 
-  if (req.isAuthenticated())
-      return next();
-
-  // if they aren't redirect them to the home page
-  res.redirect('/');
-}
