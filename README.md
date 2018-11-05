@@ -1,4 +1,20 @@
-# Project2
+# Social Stories
+
+ 
+## MVP
+The primary goal of this project is to enable the user to keep up with headline news, based off their interest.  Social Stories target anyone who likes to keep up with current events/news of their interest.  Our product addresses the time-consuming process searching for interesting headline news.  
+Social Stories is structured like a social media website. When the user first signs up, they will be asked what news categories they’re interested in.  On the user’s customize page, they will receive only the headlines news related to the categories they picked.   The user can also follow other users and see their posts on the customize page.
+ 
+## Essential User Stories
+As a user, I want to receive headline news based on categories I’m interested in.
+As a user, I want to post and share my experience/thoughts related to the news
+As a user, I want to be able to search for other users with the same interest and see their post.
+ 
+## Team Members:
+Denis Plaster, Katie Kasperek, Isaiah Ramsey, Parker Call, See Xiong
+
+
+
 Api Routes:
 | Method | Path                                              | Type | Data In                                                | Data Out                                                            | Description                                                                         |
 |--------|---------------------------------------------------|------|--------------------------------------------------------|---------------------------------------------------------------------|-------------------------------------------------------------------------------------|
