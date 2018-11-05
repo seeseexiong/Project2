@@ -99,7 +99,6 @@ module.exports = function(app) {
       */
       });
   });
-<<<<<<< HEAD
   app.get('/api/searchHeadlines', function(req, res) {
     newsapi.v2
       .topHeadlines({
@@ -118,11 +117,9 @@ module.exports = function(app) {
       */
       });
   });
-=======
   app.get("/", (req,res) => {
     db.Comment.findAll()
   })
->>>>>>> ed14cfdd2ab868fe40f00432931c0e92da72443d
 };
 
 
