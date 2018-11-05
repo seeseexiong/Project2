@@ -1,12 +1,12 @@
 var db = require("../models");
+var path = require("path");
 
 module.exports = function (app) {
   // Load index page ========================================================
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../blog.html"));
+  app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../index.html"));
   });
-<<<<<<< HEAD
-=======
+
   // Main LogIn Page ========================================================
   app.get('/login/main', function (req, res) {
     // render the page and pass in any flash data if it exists
@@ -42,11 +42,11 @@ module.exports = function (app) {
   // Profile Page ========================================================
   // want protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
-  app.get('/profile', isLoggedIn, function (req, res) {
-    res.render('profile.handlebars', {
-      user: req.user // get the user out of session and pass to template
-    });
-  });
+  // app.get('/profile', isLoggedIn, function (req, res) {
+  //   res.render('profile.handlebars', {
+  //     user: req.user // get the user out of session and pass to template
+  //   });
+  // });
 
   // LogOut Page ========================================================
   app.get('/logout', function (req, res) {
@@ -54,7 +54,6 @@ module.exports = function (app) {
     res.redirect('/');
   });
 
->>>>>>> ed14cfdd2ab868fe40f00432931c0e92da72443d
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
@@ -64,10 +63,11 @@ module.exports = function (app) {
       });
     });
   });
+ 
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
   });
-
-};
+}
+// comment out non working stuff
