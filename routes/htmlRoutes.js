@@ -70,3 +70,4 @@ module.exports = function (app) {
     res.render("404");
   });
 }
+// comment out non working stuff
