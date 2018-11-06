@@ -27,11 +27,6 @@ document.addEventListener('DOMContentLoaded', function (){
         $($headlineDiv).append("<div class = 'card-stacked'>");
         $('.card-stacked').append("<div class= 'card-content'>");
         $('.card-content').append("<a href=" + data.articles.url + ">Read more</a>");
-
-
-        
-         
-    }
-
-
-})
+    };
+    
+});
