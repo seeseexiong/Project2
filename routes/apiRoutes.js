@@ -29,6 +29,7 @@ module.exports = function(app) {
         category: favorites[i],
         language: 'en',
         country: 'us',
+        pageSize: 3
       })
       .then(response => {
         console.log(response);
