@@ -1,6 +1,6 @@
-$(document).ready(function (){
-    var $ = $("");
-    var $headlineDiv = $(".headlineNews");
+
+document.addEventListener('DOMContentLoaded', function (){
+    var $headlineDiv = $("#headlineNews");
     var topHeadlines = [];
 
     getTopHeadlines();
@@ -9,7 +9,7 @@ $(document).ready(function (){
         $headlineDiv.empty();
         var rowsToAdd = [];
         for (var i = 0; i < topHeadlines.length; i++) {
-          rowsToAdd.push(createNewRow(topHeadlines[i]));
+          rowsToAdd.push(createNewCard(topHeadlines[i]));
         }
         $headlineDiv.prepend(rowsToAdd);
       }
@@ -20,7 +20,11 @@ $(document).ready(function (){
             initializeCards();
         })
     }
+    function createNewCard(data) {
+        $('.card-horizontal').append("<div class= 'card-content'>")
+        $('.card-content').append("<h3>" + data.articles[0].title + "</h3>")
+        $('.card-stacked').append("<div class= 'card-content'>");
+        $('.card-content').append("<a href=" + data.articles[0].url + ">Read more</a>");
+    };
 
-
-
-})
+});

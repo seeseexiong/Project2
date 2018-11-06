@@ -1,8 +1,7 @@
 var db = require("../models");
 var path = require("path");
 
-app.get('/:postId/comment')// Add comment to a post
-        .post(function(req,res){ 
+app.get('/:postId/comment', (req,res)=>{ 
             models.Comment.create({
                 userId: req.body.userId,
                 text: req.body.comment,
@@ -13,12 +12,12 @@ app.get('/:postId/comment')// Add comment to a post
                 console.log(err);
                 res.sendStatus(500);
             });
-app.destroy('/:postId/comment')// delete comment to a post
-db.Comment.destroy({
-  where: {
-    userId: req.params.userid
-  }
-}).then((dbPost) => {
-  res.json(dbPost);
-});
+// app.destroy('/:postId/comment')// delete comment to a post
+// db.Comment.destroy({
+//   where: {
+//     userId: req.params.userid
+//   }
+// }).then((dbPost) => {
+//   res.json(dbPost);
+// });
         });

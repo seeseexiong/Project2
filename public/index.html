@@ -17,8 +17,8 @@
 
 <body>
 
-    <nav class="nav-extended" class="white" role="navigation">
-        <div class="nav-wrapper" id="nav-margin">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
             <a id="logo-container" href="#" class="brand-logo">Social Stories</a>
 
             <ul class="right hide-on-med-and-down">
@@ -141,11 +141,7 @@
             </div>
         </div>
         <div class="parallax">
-<<<<<<< HEAD:public/index.html
-            <img src="./images/background_1.jpg" alt="Unsplashed background img 1">
-=======
-            <img src="public/images/background_1.jpg" alt="Unsplashed background img 1">
->>>>>>> ef109913fef29ac5d2fc7b1aee95e85ea6890252:index.html
+            <img src="http://localhost:3000/public/images/background_1.jpg" alt="Unsplashed background img 1">
         </div>
     </div>
 
@@ -157,7 +153,7 @@
             </div>
         </div>
         <div class="parallax" id="gif">
-            <img src="./images/socialstories.gif" alt="Unsplashed background img 3">
+            <img src="http://localhost:3000/public/images/socialstories.gif" alt="Unsplashed background img 3">
         </div>
     </div>
 
@@ -588,10 +584,75 @@
             </div>
         </div>
     </footer>
+    <script>
+
+        // When the user scrolls the page, execute myFunction 
+        window.onscroll = function () { myFunction() };
+
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
+
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        // smooth scroll link=======================
+
+        $(document).ready(function () {
+            // Add smooth scrolling to the take a peek link
+
+            $("#download-button-2").on('click', function (event) {
+
+                console.log('slow scroll callback called')
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+                return false;
+            });
+        });
+
+        // modal open
+
+        $(document).ready(function () {
+
+            $('#signInModal').modal();
+            $('#signUpModal').modal();
+            $('#modal1').modal();
+            $('#modal2').modal();
+
+        });
+
+
+
+    </script>
+
+    <!--  Scripts-->
 
     <script src="public/js/materialize.js"></script>
     <script src="public/js/init.js"></script>
-    <script src="public/js/index.js"></script>
 
 </body>
 

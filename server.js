@@ -1,5 +1,5 @@
 /* //------------------------------------------------------------
-  SERVER.JS 
+  SERVER.JS 567
 */ //-------------------------------------------------------------
 
 // Require ======================================================
@@ -11,6 +11,8 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const passport = require('passport'); 
+const serve = require('express-static')
+const path = require('path')
 
 var db = require("./models");
 
@@ -30,6 +32,9 @@ app.use(express.static("public"));
 
 // Passport 
 //require('./config/passport/passport')(app);
+
+//Static
+app.use(serve('public'))
 
 
 // Handlebars --------------------------
@@ -56,7 +61,7 @@ app.set('views',path.join(__dirname,'/views'));
 require("./routes/apiRoutes")(app, passport);
 //require("./routes/auth.js")(app, passport);
 require("./routes/htmlRoutes")(app, passport);
-
+require("./routes/likes")(app);
 
 //load passport strategies
 //require('./config/passport/passport.js');
