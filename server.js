@@ -1,5 +1,5 @@
 /* //------------------------------------------------------------
-  SERVER.JS ----> Setup 
+  SERVER.JS 
 */ //-------------------------------------------------------------
 
 // Require ======================================================
@@ -7,47 +7,57 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
-
-var db = require("./models");
-
-// Express
-
-var app = express();
-var PORT = process.env.PORT || 3000;
-
-// Passport 
-const passport = require('passport');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
+const path = require('path');
+const passport = require('passport'); 
 
-// Middleware Config ======================================================
+// Port and Models
+var models = require("./models");
+var PORT = process.env.PORT || 3000;
 
-// require('./config/passport')(passport); // pass passport for configuration
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// Express --------------------------
+var app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cookieParser()); // read cookies (needed for auth)
-app.use(express.static("public"));
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
 
-// required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+// Passport --------------------------
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
+
+
+// Handlebars --------------------------
+// app.engine(
+//   "handlebars",
+//   exphbs({
+//     defaultLayout: "main"
+//   })
+// );
+// app.set("view engine", "handlebars");
+
+app.engine('handlebars', exphbs({
+  extname: '.handlebars',
+  defaultLayout: 'main',
+  partialsDir: path.join(__dirname, '/views/partials'),
+  layoutsDir: path.join(__dirname, '/views/layouts')
+}));
+app.set('view engine', 'handlebars');
+app.set('views',path.join(__dirname,'/views'));
+
+
 
 // Routes ======================================================
 require("./routes/apiRoutes")(app, passport);
+require("./routes/auth.js")(app, passport);
 require("./routes/htmlRoutes")(app, passport);
+
+
+//load passport strategies
+require('./config/passport/passport.js')(passport, models.user);
 
 var syncOptions = { force: false };
 
@@ -58,16 +68,12 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ==========================================
-db.sequelize.sync(syncOptions).then(function() {
+models.sequelize.sync(syncOptions).then(function() {
   console.log(process.env.NODE_ENV)
   app.listen(PORT, function() {
     console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT,
-    );
+      "Some badass people starting baddass servers on: http://localhost:" + PORT);
     
   });
 });
 
-//module.exports = app;

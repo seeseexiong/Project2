@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
   
   Post.associate = (models) => {
-    Post.belongsTo(models.User,{as : 'User', foreignKey: 'userId'})
+    Post.belongsTo(models.user,{as : 'user', foreignKey: 'userId'})
   }
   
     return Post;

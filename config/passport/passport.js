@@ -2,56 +2,113 @@
 Configuring Passport for Local Accounts
 */ //======================================
 
-// Config Passport =====================================
-let Strategy = require('passport-local').Strategy;
-let User = require('../../models/user')
+//load bcrypt
+var bCrypt = require('bcrypt-nodejs');
 
+module.exports = function (passport, user) {
 
-//A strategy is the way we are authenticating. A local stategy is one that doesn't user 3rd party auth.
-//This is the simplest strategy. We are storing the username and password in plaintext in the db (I know, I know. super insecure. It's just an example, don't judge)
-//To authenticate:
-// 1. check if the user is in the database 
-// 2. check if the password matches
-const strategy = new Strategy(
-    // 
-    // {
-    // usernameField: 'email',
-    // passwordField: 'passwd'
-    // },
-    //{  session: true },
-    //Passport will give us the username and password and the "done" function. 
-    function (username, password, done) {
+  var User = user;
+  var LocalStrategy = require('passport-local').Strategy;
 
-        //our user is in Sequelize,
-        User.findOne({
-            where: { username: username }
-        }).then(
-            function (DBuser) {
-                console.log("Back from the database! Let's check if our credentials are good: ");
+  // serialize the user
+  passport.serializeUser(function (user, done) {
+    console.log("serializing user:", user.id);
+    done(null, user.id);
+  });
 
-                if (!DBuser) {
-                    console.log("User " + username + " was not in the DB");
-                    return done(null, false, { message: 'Incorrect username.' });
-                }
-                if (!DBuser.validPassword(password)) {
-                    // if (!(DBuser.password===password)) {
-                    console.log("Password " + password + " does not match the password in the DB: " + DBuser.password); //For the love of all that is good and secure, never console log user passwords in a production app
+  // deserialize the user
+  passport.deserializeUser(function (savedId, done) {
+    console.log("Deserializing user: ", savedId)
+    User.findById(savedId).then(function (user) {
+      if (user) {
+        done(null, user.get());
+      }
+      else {
+        done(user.errors, null);
+      }
+    });
+  });
 
-                    return done(null, false, { message: 'Incorrect password.' });
-                }
-                // if the user exists, and the passwords match, we have a successful Authentication! 
-                // return the user object. This will get saved in req.user
-                console.log("They are!");
-                return done(null, DBuser);
+  // Local SignUp --> Creating a new user =======================================================
+  passport.use('local-signup', new LocalStrategy(
+    {
+      usernameField: 'email',
+      passwordField: 'password',
+      passReqToCallback: true // allows us to pass back the entire request to the callback
+    },
+
+    // hash password with bCrypt before saving into database
+    function (req, email, password, done) {
+      var generateHash = function (password) {
+        return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+      };
+
+      // look in database to see if that email is already in use 
+      User.findOne({ where: { email: email } }).then(function (user) {
+        if (user) {
+          return done(null, false, { message: 'That email is already taken' });
+        }
+        else {
+          var userPassword = generateHash(password);
+          var data =
+          {
+            email: email,
+            password: userPassword,
+            name: req.body.name,
+            username: req.body.username
+          };
+
+          User.create(data).then(function (newUser, created) {
+            if (!newUser) {
+              return done(null, false);
             }
 
-        )
-            .catch(err => {
-                return done(err, false, { message: 'Some DB error:' });
-            })
-            ;
+            if (newUser) {
+              return done(null, newUser);
+
+            }
+          });
+        }
+      });
+
     }
-);
 
+  ));
 
-module.exports = strategy;
+  //LOCAL SIGNIN =======================================================
+  passport.use('local-signin', new LocalStrategy(
+    {
+      // by default, local strategy uses username and password, we will override with email
+      usernameField: 'username',
+      passwordField: 'password',
+      passReqToCallback: true // allows us to pass back the entire request to the callback
+    },
+
+    function (req, username, password, done) {
+      var User = user;
+      var isValidPassword = function (userpass, password) {
+        return bCrypt.compareSync(password, userpass);
+      }
+      User.findOne({ where: { username: username } }).then(function (user) {
+
+        if (!user) {
+          return done(null, false, { message: 'Username does not exist' });
+        }
+        if (!isValidPassword(user.password, password)) {
+
+          return done(null, false, { message: 'Incorrect password.' });
+
+        }
+        var userinfo = user.get();
+        return done(null, userinfo);
+
+      }).catch(function (err) {
+        console.log("Error:", err);
+        return done(null, false, { message: 'Something went wrong with your Signin' });
+      });
+
+    }
+  ));
+
+}
+
