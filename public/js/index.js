@@ -21,12 +21,11 @@ document.addEventListener('DOMContentLoaded', function (){
         })
     }
     function createNewCard(data) {
-        $($headlineDiv).append("<div class = 'card-horizontal'>");
+        $('.card-content').append("")
         $('.card-horizontal').append("<div class= 'card-content'>")
-        $('.card-content').append("<h1>" + data.articles.title + "</h1>")
-        $($headlineDiv).append("<div class = 'card-stacked'>");
+        $('.card-content').append("<h3>" + data.articles[0].title + "</h3>")
         $('.card-stacked').append("<div class= 'card-content'>");
-        $('.card-content').append("<a href=" + data.articles.url + ">Read more</a>");
+        $('.card-content').append("<a href=" + data.articles[0].url + ">Read more</a>");
     };
-    
+
 });
