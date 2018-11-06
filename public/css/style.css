@@ -141,7 +141,10 @@ color: rgba(0, 0, 0, 0.582);
 font-weight: bold;
 color: rgba(0, 0, 0, 0.753);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> aa5caa0e09d3234aba274d084f8f9d0075c82d46
 #nav-margin {
 margin-left: 2%;
 margin-right: 2%;
@@ -174,6 +177,7 @@ form {
   padding-bottom: 20px;
   
 }
+<<<<<<< HEAD
 .t {
   display: flex;
 }
@@ -181,6 +185,11 @@ form {
   float: right;
 }
 
+=======
+#second {
+  display: none;
+}
+>>>>>>> aa5caa0e09d3234aba274d084f8f9d0075c82d46
 /* grids for the friends feed ===========================================*/
 .headerPlaceholder {
 background: rgb(255, 212, 212);

@@ -117,9 +117,7 @@ module.exports = function(app) {
       */
       });
   });
-  app.get("/", (req,res) => {
-    db.Comment.findAll()
-  })
+  
 };
 
 
