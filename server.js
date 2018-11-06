@@ -1,5 +1,5 @@
 /* //------------------------------------------------------------
-  SERVER.JS 
+  SERVER.JS 567
 */ //-------------------------------------------------------------
 
 // Require ======================================================
@@ -12,6 +12,7 @@ const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const path = require('path');
 const passport = require('passport'); 
+const serve = require('express-static')
 
 // Port and Models
 var models = require("./models");
@@ -29,6 +30,9 @@ app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+//Static
+app.use(serve('public'))
+
 
 // Handlebars --------------------------
 // app.engine(
@@ -39,21 +43,24 @@ app.use(passport.session()); // persistent login sessions
 // );
 // app.set("view engine", "handlebars");
 
-app.engine('handlebars', exphbs({
-  extname: '.handlebars',
-  defaultLayout: 'main',
-  partialsDir: path.join(__dirname, '/views/partials'),
-  layoutsDir: path.join(__dirname, '/views/layouts')
-}));
-app.set('view engine', 'handlebars');
-app.set('views',path.join(__dirname,'/views'));
+app.use(express.static(__dirname + '/public'));
+
+// app.engine('handlebars', exphbs({
+//   extname: '.handlebars',
+//   defaultLayout: 'main',
+//   partialsDir: path.join(__dirname, '/views/partials'),
+//   layoutsDir: path.join(__dirname, '/views/layouts')
+// }));
+// app.set('view engine', 'handlebars');
+// app.set('views',path.join(__dirname,'/views'));
 
 
 
 // Routes ======================================================
-require("./routes/apiRoutes")(app, passport);
+
+//require("./routes/apiRoutes")(app, passport);
 require("./routes/auth.js")(app, passport);
-require("./routes/htmlRoutes")(app, passport);
+//require("./routes/htmlRoutes")(app, passport);
 
 
 //load passport strategies
