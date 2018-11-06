@@ -1,5 +1,5 @@
 {
-  "name": "Project2",
+  "name": "project2",
   "version": "1.0.0",
   "description": "Api Routes:\r Method|----Path---------|--Type--|----Data in----|-----Data out-----|----description-------------|\r --------------------------------------------------------------------------------------------\r GET   |      /          |html    |---------------| View HTML        | Display main page          |\r GET   | /api/mainPage   |data    |User Favorites | {User.Favorites} | Grabbing Main Page News    |",
   "main": "server.js",
@@ -30,6 +30,7 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
+    "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
     "newsapi": "^2.4.0",
     "passport": "^0.4.0",
