@@ -16,27 +16,66 @@
 </head>
 
 <body>
-    <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo">Social Stories</a>
-            <ul class="right hide-on-med-and-down">
-                <li>
-                    <a href="#">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Log Out</a>
-                </li>
-                <li>
-                    <a href="#">Settings</a>
-                </li>
-                <li>
-                    <!-- Dropdown Trigger -->
-                    <a class='dropdown-trigger' href='#' data-target='dropdown1'>Profile</a>
-
-                    <!-- Dropdown Structure -->
-                    <ul id='dropdown1' class='dropdown-content'>
+        <nav class="nav-extended" class="white" role="navigation">
+                <div class="nav-wrapper" id="nav-margin">
+                    <a id="logo-container" href="index.html" class="brand-logo">Social Stories</a>
+        
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <div class="center row">
+                                <div class="col s12 ">
+                                    <div class="row" id="topbarsearch">
+                                        <div class="input-field col s6 s12 ">
+                                            <i class=" material-icons prefix">search</i>
+                                            <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+        
+                        <li>
+                            <!-- Dropdown Trigger -->
+                            <a class='dropdown-trigger' href='#' data-target='dropdown1'>Profile</a>
+        
+                            <!-- Dropdown Structure -->
+                            <ul id='dropdown1' class='dropdown-content'>
+                                <li>
+                                    <a href="blog-post.html">Write a story</a>
+                                </li>
+                                <li>
+                                    <a href="stories.html">Stories</a>
+                                </li>
+                                <li class="divider" tabindex="-1"></li>
+                                <li>
+                                    <a href="friend-follwers2.html">Followed</a>
+                                </li>
+                                <li>
+                                    <a href="favorites.js">Bookmarks</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Sign out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+        
+                    <ul id="nav-mobile" class="sidenav">
+                        <li>
+                            <a href="index.html">Social Stories</a>
+                        </li>
+                        <li>
+                            <div class="center row">
+                                <div class="col s12 ">
+                                    <div class="row" id="topbarsearch">
+                                        <div class="input-field col s6 s12 ">
+                                            <i class=" material-icons prefix">search</i>
+                                            <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li>
                             <a href="blog-post.html">Write a story</a>
                         </li>
@@ -54,30 +93,11 @@
                             <a href="#!">Sign out</a>
                         </li>
                     </ul>
-                </li>
-            </ul>
-
-            <ul id="nav-mobile" class="sidenav">
-                <li>
-                    <a href="#">Social Stories</a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-search"></i>
+                    <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
                     </a>
-                </li>
-                <li>
-                    <a href="#">Log Out</a>
-                </li>
-                <li>
-                    <a href="#">Settings</a>
-                </li>
-            </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-            </a>
-        </div>
-    </nav>
+                </div>
+            </nav>
     <div id="navbar" class="center" id="allNews" role="navigation">
         <a class="waves-effect waves-light modal-trigger" href="#modal1">Search Friend</a>
                 <!-- Modal Structure -->
@@ -235,19 +255,7 @@
     </div>
     <br><br><br><br>
     </div>
-<!-- Footer container ======================================================================================= -->
-<footer class="page-footer grey lighten-5">
-    <div class="container">
-        <div class="row">
 
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            Made by Purple Parrots
-        </div>
-    </div>
-</footer>
 
 <script>
 
@@ -305,13 +313,7 @@
 
     <!--  Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<<<<<<< HEAD:public/friend-follwers2.html
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
-=======
-    <script src="public/js/materialize.js"></script>
-    <script src="public/js/init.js"></script>
-   
->>>>>>> aa5caa0e09d3234aba274d084f8f9d0075c82d46:friend-follwers2.html
 </body>
 </html>
