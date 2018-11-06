@@ -141,6 +141,10 @@ nav.nav-center ul li a {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.753);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 094dd29d3848af1bff34d3f7d8ccd5e98c50d1ec
 #nav-margin {
   margin-left: 2%;
   margin-right: 2%;
@@ -159,9 +163,13 @@ nav.nav-center ul li a {
 ul li {
   height: 70px;
 }
+<<<<<<< HEAD
 #second {
   display: none;
 }
+=======
+
+>>>>>>> 094dd29d3848af1bff34d3f7d8ccd5e98c50d1ec
 /* grids for the friends feed ===========================================*/
 .headerPlaceholder {
   background: rgb(255, 212, 212);
