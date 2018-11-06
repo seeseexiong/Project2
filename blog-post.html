@@ -16,28 +16,52 @@
 
     <style>
         .postNav {
-            margin: 20px 0;}
+            margin: 20px 0;
+        }
+
         .logo {
             display: inline-flex;
-            align-items: center;}
-        .logo-icon {    
+            align-items: center;
+        }
+
+        .logo-icon {
             display: inline-flex;
-            margin: 5px;}
+            margin: 5px;
+        }
+
         .logo-text {
             display: block;
-            margin: 0;}
-        
-        .header {
-            margin: 10px 40px;
-            padding: 0 20px;
-        }   
+            margin: 0;
+        }
 
-        #actionButton {
+        .header {
+            margin: auto;
+            padding: auto;
+        }
+
+        .card.horizontal {
+            border-left: 20px solid;
+            padding: 10px;
+            align-items: center;
+        }
+
+        .author-card {
+            margin: 0 auto;
+            padding-left: 10px;
+        }
+
+        .post-box {
+            margin-top: 45px;
+            /* border: 1px solid #666;
+            border-radius: 10px; */
+        }
+
+        /* #actionButton {
             position: absolute !important;
             display: inline-block;
             right: auto;
             bottom: auto;
-        }
+        } */
     </style>
 
 </head>
@@ -49,7 +73,7 @@
     <div class="row postNav">
         <div class="col s12 m6">
             <div class="logo">
-                <i class="material-icons medium logo-icon" >font_download</i>
+                <i class="material-icons medium logo-icon">font_download</i>
                 <span class="logo-text">
                     <h5 class="logo-text">Social Story</h5>
                     <p class="logo-text"> New Draft </p>
@@ -60,140 +84,147 @@
             <div class="right ">
                 <a class="waves-effect waves-light btn-small">Save</a>
                 <a class="waves-effect waves-light btn-small">Help</a>
-                <a class="waves-effect waves-light btn-small">Settings <i class="material-icons">person_outline</i></a>
+                <a class="waves-effect waves-light btn-small">Settings</a>
             </div>
         </div>
     </div>
 
-        <!-- Post Page Header -->
-        <div class="row">
-            <div class="col m12">
-                <div class="header">
-                    <h2>Write a ...
-                        <span class="txt-rotate" data-period="2000" data-rotate='[ "story.", "poem.", "novel.", "review.", "idea." ]'></span>
-                    </h2>
-                    <h5 class="flow-text">A single &lt;idea&gt; is all you need to start.</h5>
-                   <hr>
+    <!-- Post Page Header -->
+    <div class="row container">
+        <div class="col s12 ">
+            <div class="header center">
+                <h2>Write a ...
+                    <span class="txt-rotate" data-period="2000" data-rotate='[ "story.", "poem.", "novel.", "review.", "idea." ]'></span>
+                </h2>
+                <h5 class="flow-text">A single &lt;idea&gt; is all you need to start.</h5>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="js-titleLabel u-paddingTop19 u-absolute u-top0 u-right0 u-transition--transform200Spring u-transition--fadeOut100" style="transform: translate3d(0px, 0px, 0px);">Title</div> -->
+
+    <div class="container post-box">
+        <!-- Post Title -->
+        <div class="row valign-wrapper">
+            <div class="col s12 m4">
+                <div class="card horizontal">
+                    <img src="https://via.placeholder.com/80" alt="" class="circle responsive-img">
+                    <span class="">
+                        <p class="author-card">Username</p>
+                        <p class="author-card"> Author </p>
+                    </span>
+                </div>
+            </div>
+            <div class="col s12 m8">
+                <div class="input-field ">
+                    <textarea id="textarea1" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Title</label>
+                </div>
+                <div class="input-field ">
+                    <textarea id="subtitle" class="materialize-textarea"></textarea>
+                    <label for="subtitle">Subtitle</label>
                 </div>
             </div>
         </div>
-
-        <!-- <div class="js-titleLabel u-paddingTop19 u-absolute u-top0 u-right0 u-transition--transform200Spring u-transition--fadeOut100" style="transform: translate3d(0px, 0px, 0px);">Title</div> -->
-
-<div class="container">
-        <!-- Post Title -->
-        <div class="row">
-            <div class="col s1">
-                <a class="btn-floating btn-large waves-effect waves-light required"><i class="material-icons">add</i></a>
-            </div>
-            <div class="input-field col s11">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Title</label>
-            </div>
-
-        </div>
         <!-- Post Body -->
         <div class="row">
-            <div class="col s1">
-                <div id="actionButton" class="fixed-action-btn horizontal direction-top direction-right">
+            <div class="input-field col s12">
+                <textarea id="textarea2" class="materialize-textarea"></textarea>
+                <label for="textarea2">Tell your story...</label>
+
+            <div class="col s12">
+                <div id="actionButton" class="fixed-action-btn ">
                     <a class="btn-floating btn-large red">
                         <i class="large material-icons">mode_edit</i>
                     </a>
                     <ul>
-                        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
                         <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
                         <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
                         <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="input-field col s11">
-                <textarea id="textarea2" class="materialize-textarea"></textarea>
-                <label for="textarea2">Tell your story...</label>
-            </div>
+
         </div>
 
+    </div>
 
 
+    <script>
 
-
-
-
-        <script>
-            var TxtRotate = function (el, toRotate, period) {
-                this.toRotate = toRotate;
-                this.el = el;
-                this.loopNum = 0;
-                this.period = parseInt(period, 10) || 2000;
-                this.txt = '';
-                this.tick();
-                this.isDeleting = false;
-            };
-
-            TxtRotate.prototype.tick = function () {
-                var i = this.loopNum % this.toRotate.length;
-                var fullTxt = this.toRotate[i];
-
-                if (this.isDeleting) {
-                    this.txt = fullTxt.substring(0, this.txt.length - 1);
-                } else {
-                    this.txt = fullTxt.substring(0, this.txt.length + 1);
-                }
-
-                this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-                var that = this;
-                var delta = 300 - Math.random() * 100;
-
-                if (this.isDeleting) { delta /= 2; }
-
-                if (!this.isDeleting && this.txt === fullTxt) {
-                    delta = this.period;
-                    this.isDeleting = true;
-                } else if (this.isDeleting && this.txt === '') {
-                    this.isDeleting = false;
-                    this.loopNum++;
-                    delta = 500;
-                }
-
-                setTimeout(function () {
-                    that.tick();
-                }, delta);
-            };
-
-            window.onload = function () {
-                var elements = document.getElementsByClassName('txt-rotate');
-                for (var i = 0; i < elements.length; i++) {
-                    var toRotate = elements[i].getAttribute('data-rotate');
-                    var period = elements[i].getAttribute('data-period');
-                    if (toRotate) {
-                        new TxtRotate(elements[i], JSON.parse(toRotate), period);
-                    }
-                }
-                // INJECT CSS
-                var css = document.createElement("style");
-                css.type = "text/css";
-                css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-                document.body.appendChild(css);
-            };
-
-
-
-            document.addEventListener('DOMContentLoaded', function () {
-                var elems = document.querySelectorAll('.fixed-action-btn');
-                var instances = M.FloatingActionButton.init(elems, {
-                    direction: 'bottom'
-                });
+        // action button
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, {
+                direction: 'top'
             });
+        });
+
+        // Type text 
+        var TxtRotate = function (el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtRotate.prototype.tick = function () {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 300 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function () {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function () {
+            var elements = document.getElementsByClassName('txt-rotate');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-rotate');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // Add CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+            document.body.appendChild(css);
+        };
 
 
-
-
-        </script>
-        <!--  Scripts-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="public/js/materialize.js"></script>
-        <script src="public/js/init.js"></script>
+    </script>
+    <!--  Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="public/js/materialize.js"></script>
+    <script src="public/js/init.js"></script>
 </body>
 
 </html>
