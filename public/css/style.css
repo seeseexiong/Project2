@@ -120,7 +120,7 @@ nav.nav-center ul li a {
 .navbar {
  text-align: center;
 }
-#download-button-2 {
+.download-button-2 {
   color: rgba(0, 0, 0, 0.753);
 }
 
@@ -141,6 +141,26 @@ nav.nav-center ul li a {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.753);
 }
+
+#nav-margin {
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 70px;
+}
+.nav-extended {
+  background-color: white;
+}
+#search-icon {
+  color: rgba(0, 0, 0, 0.582);
+}
+.nav {
+  height:70px;
+}
+
+ul li {
+  height: 70px;
+}
+
 /* grids for the friends feed ===========================================*/
 .headerPlaceholder {
   background: rgb(255, 212, 212);
