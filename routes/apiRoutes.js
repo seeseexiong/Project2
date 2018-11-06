@@ -144,10 +144,6 @@ module.exports = function(app) {
         res.sendStatus(500)
       })
   });
-
-  app.get("/", (req,res) => {
-    db.Comment.findAll()
-  })
 };
 
 

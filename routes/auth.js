@@ -10,6 +10,20 @@ var flash = require('connect-flash');
 // }
 
 module.exports = function (app, passport) {
+    // new handlebar routes ------------------------------------------------------------------------
+    // Home Page ===================================================
+    router.get('/', function (req, res) {
+        res.render("index");
+    });
+    // User Page ===================================================
+    router.get('/user', function (req, res) {
+        res.render("user");
+    });
+
+
+
+
+    //-----------------------------------------------------------------------------------------------
 
     // SignUp ======================================================== 
     router.get('/signup', function (req, res) {
@@ -28,15 +42,15 @@ module.exports = function (app, passport) {
     });
     // signin redirects
     router.post('/signin', passport.authenticate('local-signin', {
-        successRedirect: '/dashboard', //can change where to redirect
+        successRedirect: '/user', //can change where to redirect
         failureRedirect: '/signin'
     }
     ));
 
     // User Dashboard ======================================================== 
-    router.get('/dashboard', function (req, res) {
-        res.render("dashboard");
-    });
+    // router.get('/dashboard', function (req, res) {
+    //     res.render("dashboard");
+    // });
 
 
     // LogOut ======================================================== 
