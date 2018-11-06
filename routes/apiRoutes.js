@@ -8,35 +8,6 @@ var favorites = ["business", "sports", "politics"]
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/searchUsers", function(req, res) {
-    db.users.findAll({where : {name: req.params.name}}).then(function(dbUsers) {
-      res.json(dbUsers);
-    });
-  });
-
-  app.get("/api/followedPosts", function(req, res) {
-    db.Posts.findAll({where: {post: req.params.Post}}).then(function(dbPosts) {
-      res.json(dbPosts);
-    });
-  });
-  app.get("/api/followedLikes", function(req, res) {
-    db.users.findAll({like: req.params.like}).then(function(dbLikes) {
-      res.json(dbLikes);
-    });
-  });
-  app.get("/api/Comments", function(req, res) {
-    db.User.findAll({Comment: req.params.Comment}).then(function(dbComment) {
-      res.json(dbComment);
-    });
-  });
-  
-
-  // Create a new example
-  app.post("/api/Comments", function(req, res) {
-    db.Comments.create(req.body).then(function(dbComment) {
-      res.json(dbComment);
-    });
-  });
 
   // Delete an example by id
   app.delete("/api/users/:id", function(req, res) {

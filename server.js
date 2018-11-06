@@ -23,18 +23,19 @@ var PORT = process.env.PORT || 3000;
 // Middleware Config ======================================================
 
 // Express --------------------------
-var app = express();
+// var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser()); // read cookies (needed for auth)
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 
 // Passport 
 //require('./config/passport/passport')(app);
 
 //Static
-app.use(serve('public'))
+// app.use(serve('public'))
+app.use(express.static("public"));
 
 
 // Handlebars --------------------------
@@ -46,7 +47,7 @@ app.use(serve('public'))
 // );
 // app.set("view engine", "handlebars");
 
-app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + './public'));
 
 // app.engine('handlebars', exphbs({
 //   extname: '.handlebars',
@@ -61,9 +62,9 @@ app.use(express.static(__dirname + '/public'));
 
 // Routes ======================================================
 
-//require("./routes/apiRoutes")(app, passport);
+require("./routes/apiRoutes")(app, passport);
 require("./routes/auth.js")(app, passport);
-//require("./routes/htmlRoutes")(app, passport);
+require("./routes/htmlRoutes")(app, passport);
 
 
 //load passport strategies
