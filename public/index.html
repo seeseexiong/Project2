@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Social Stories</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="nav-extended" class="white" role="navigation">
+        <div class="nav-wrapper" id="nav-margin">
+            <a id="logo-container" href="#" class="brand-logo">Social Stories</a>
+
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <div class="center row">
+                        <div class="col s12 ">
+                            <div class="row" id="topbarsearch">
+                                <div class="input-field col s6 s12 ">
+                                    <i class=" material-icons prefix">search</i>
+                                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+
+                    <a class="modal-trigger " href="#signInModal" onclick="$('#signInModal').modal('open');">Sign In</a>
+
+
+
+                </li>
+                <li>
+
+                    <!-- model trigger -->
+                    <a class="modal-trigger " href="#signUpModal" onclick="$('#signUpModal').modal('open');">Sign Up</a>
+
+
+
+                </li>
+                <li>
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-trigger' href='#' data-target='dropdown1'>Profile</a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li>
+                            <a href="#!">one</a>
+                        </li>
+                        <li>
+                            <a href="#!">two</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a href="#!">three</a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <i class="material-icons">view_module</i>four</a>
+                        </li>
+                        <li>
+                            <a href="#!">
+                                <i class="material-icons">cloud</i>five</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li>
+                    <a href="#">Social Stories</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Log in</a>
+                </li>
+                <li>
+                    <a href="#">Get started</a>
+                </li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
+    <div id="navbar" class="center" id="allNews" role="navigation">
+        <a class="center" href="#home">Home</a>
+        <a class="center" href="#news">Culture</a>
+        <a class="center" href="#contact">Tech</a>
+        <a class="center" href="#home">Politics</a>
+        <a class="center" href="#news">Design</a>
+        <a class="center" href="#contact">Health</a>
+        <a class="center" href="#home">Film</a>
+        <a class="center" href="#news">Sports</a>
+        <a class="center" href="#contact">Cooking</a>
+        <a class="center" href="#home">Gaming</a>
+        <a class="center" href="#news">Art</a>
+        <a class="center" href="#contact">Style</a>
+    </div>
+
+    <!-- Home page introduction banner ============================================================================ -->
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col s7">
+                        <h3 class="header left-align col col-s4" id="welcome">Welcome to Social Stories, where words matter.</h3>
+                    </div>
+
+                    <p class="header left-align col s6 light" id="mission_statement">We’ll deliver the best stories and ideas on the topics you care about most straight to your homepage,
+                        app, or inbox.</p>
+                </div>
+                <div class="row">
+
+                    <!-- Modal Trigger -->
+                    <a href="#signInModal" id="download-button" class="btn-large waves-effect grey darken-4" onclick="$('#signInModal').modal('open');">Get started</a>
+
+                    <a href="#headlineNews" id="download-button-2" class="btn-large waves-effect N/A transparent">Take a peek</a>
+                </div>
+                <br>
+                <br>
+
+            </div>
+        </div>
+        <div class="parallax">
+<<<<<<< HEAD:public/index.html
+            <img src="./images/background_1.jpg" alt="Unsplashed background img 1">
+=======
+            <img src="public/images/background_1.jpg" alt="Unsplashed background img 1">
+>>>>>>> ef109913fef29ac5d2fc7b1aee95e85ea6890252:index.html
+        </div>
+    </div>
+
+    <!-- Gif Banner ========================================================================================== -->
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container" id="gif_container">
+            </div>
+        </div>
+        <div class="parallax" id="gif">
+            <img src="./images/socialstories.gif" alt="Unsplashed background img 3">
+        </div>
+    </div>
+
+    <!-- // Jump to link from "take a peek" -->
+
+    <div id="headlineNews"></div>
+
+
+    <!-- Headline News ================================================================================= -->
+
+
+    <div class="row">
+        <header>
+            <h5>Featured for members</h5>
+        </header>
+
+        <div class="col s8">
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                            <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Modal</a>
+
+                            <!-- Modal Structure -->
+                            <div id="modal2" class="modal">
+                                <div class="modal-content">
+                                    <h4>Cool story here</h4>
+                                    <p>A bunch of text</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header>
+                <h5>Culture</h5>
+            </header>
+            <hr>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header>
+                <h5>Politics</h5>
+            </header>
+            <hr>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header>
+                <h5>Technology</h5>
+            </header>
+            <hr>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header>
+                <h5>Sports</h5>
+            </header>
+            <hr>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Blogger news -->
+
+
+        <div class="col s4">
+
+            <header>
+                <h5>Popular social stories</h5>
+            </header>
+
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Modals ===================================================================================== -->
+
+
+
+    <div class="wrapper">
+
+        <div class="login_box">
+
+
+            <!-- Modal Structure -->
+            <div id="signInModal" class="modal">
+                <div class="right">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+                        <i class="material-icons">clear</i>
+                    </a>
+                </div>
+                <div class="login_header" class="modal-content center">
+                    <h5>Ready for awesomeness?</h5>
+                    <h3>Login to your account!</h3>
+                    <hr>
+                </div>
+                <div id="first">
+
+                    <div class="container">
+                        <form id="signin" class="row" name="signin" method="post" action="/signin">
+                            <!-- Username -->
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">verified_user</i>
+                                <input id="usernameLogin" type="text" name="username" class="validate">
+                                <label for="usernameLogin"> Username</label>
+                            </div>
+                            <!-- Password -->
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">fingerprint</i>
+                                <input id="passwordLogin" type="password" name="password" class="validate">
+                                <label for="passwordLogin"> Password</label>
+                            </div>
+                            <!-- Signin button -->
+                            <div class="col s12 center">
+                                <input class="btn btn-primary btn-large" type="submit" value="Sign In" />
+                            </div>
+                        </form>
+
+                        <!-- link to signup -->
+                        <div class="center row">
+                            <p id="loginLink">Do you need an account?
+                                <a id="signup" class="signup" class="modal-trigger " href="#" onclick="$('#signUpModal').modal('open');">Sign Up</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="second">
+
+
+                    <div class="container">
+                        <form id="signup" class="row" name="signup" method="post" action="/signup">
+                            <!-- name -->
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="nameInput" type="text" name="name" class="validate" required>
+                                <label for="nameInput"> Name</label>
+                            </div>
+                            <!-- email -->
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="emailInput" type="email" name="email" class="validate" required>
+                                <label for="emailInput"> Email</label>
+                            </div>
+                            <!-- username -->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">verified_user</i>
+                                <input id="usernameInput" type="text" name="username" class="validate" required>
+                                <label for="usernameInput"> Username</label>
+                            </div>
+                            <!-- password -->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">fingerprint</i>
+                                <input id="passwordInput" type="password" name="password" class="validate" required>
+                                <label for="passwordInput"> Password</label>
+                            </div>
+                            <!-- submit button -->
+                            <div class="col s12 center">
+                                <input class="btn btn-primary btn-large" type="submit" value="Sign Up" />
+                            </div>
+                        </form>
+
+                        <!-- link to login -->
+                        <div class="center row">
+                            <p id="loginLink">Already have an account?
+                                <a id="signin" class="signin" class="modal-trigger " href="#" onclick="$('#signInModal').modal('open');">Sign In</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Footer container ======================================================================================= -->
+    <footer class="page-footer grey lighten-5">
+        <div class="container">
+            <div class="row">
+                <div class="col 1 s12">
+                    <p class="concept_text">Ideas and perspectives you won’t find anywhere else. Social Stories taps into the brains of the world’s
+                        most insightful writers, thinkers, and storytellers to bring you the smartest takes on topics that
+                        matter. So whatever your interest, you can always find fresh thinking and unique perspectives.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by Purple Parrots
+            </div>
+        </div>
+    </footer>
+
+    <script src="public/js/materialize.js"></script>
+    <script src="public/js/init.js"></script>
+    <script src="public/js/index.js"></script>
+
+</body>
+
+</html>

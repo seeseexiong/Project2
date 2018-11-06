@@ -1,25 +1,231 @@
-@font-face {
-  font-family: Graphers Blog;
-  src: url ('../font/Graphers Blog.ttf');
+body, html, .main {
+    height: 100%;
 }
 
-h2 { 
-  font-family: Graphers Blog, sans-serif; 
-  color: rgba(0, 0, 0, 0.884);
+section {
+    min-height: 100%;
 }
 
-#nav{
-  background-color: #f4f4f4;
+header {
+  margin-left: 2%;
 }
 
-li {
-  color: rgba(0, 0, 0, 0.548)
+nav ul a,
+nav .brand-logo {
+  color: #444;
 }
 
-#categories-container {
-  background-color: #f4f4f4;
+p {
+  line-height: 2rem;
 }
 
-a {
-  color: rgba(0, 0, 0, 0.541) !important;
+h3 {
+  color: rgba(0, 0, 0, 0.815);
+  font-family: 'Times New Roman', Times, serif;
 }
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+.concept_text {
+  color: rgba(0, 0, 0, 0.815);
+}
+  #gif {
+    height: 80%;
+    width: 100%;
+    margin: auto;
+  }
+  #gif_container {
+    height: 500px;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section #gif_container {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section #gif_container {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+  z-index: 5;
+}
+
+#navbar a {
+
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+} 
+nav.nav-center ul {
+  text-align: center;
+}
+nav.nav-center ul li {
+  display: inline;
+  float: none;
+}
+nav.nav-center ul li a {
+  display: inline-block;
+}
+.navbar {
+ text-align: center;
+}
+.download-button-2 {
+  color: rgba(0, 0, 0, 0.753);
+}
+
+#download-button {
+  margin-left: 25px;
+}
+#mission_statement {
+  margin-left: 15px;
+  color: rgba(0, 0, 0, 0.753);
+  font-size: 1.2em;
+ 
+}
+.fas {
+  display: block !important;
+  color: rgba(0, 0, 0, 0.582);
+}
+#welcome {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.753);
+}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 094dd29d3848af1bff34d3f7d8ccd5e98c50d1ec
+#nav-margin {
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 70px;
+}
+.nav-extended {
+  background-color: white;
+}
+#search-icon {
+  color: rgba(0, 0, 0, 0.582);
+}
+.nav {
+  height:70px;
+}
+
+ul li {
+  height: 70px;
+}
+<<<<<<< HEAD
+#second {
+  display: none;
+}
+=======
+
+>>>>>>> 094dd29d3848af1bff34d3f7d8ccd5e98c50d1ec
+/* grids for the friends feed ===========================================*/
+.headerPlaceholder {
+  background: rgb(255, 212, 212);
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding: 40px;
+}
+
+.feed-wrapper{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 95%;
+  height: 60%;
+  border: solid rgb(190, 190, 190) 3px;
+  border-radius: 15px;
+
+  overflow: hidden;
+}
+
+.box {
+background-color: rgb(208, 213, 214);
+height: 100px;
+width: 49%;
+border-radius: 15px;
+}
+
+.card-name {
+  position: relative;
+  float: left;
+  margin: 5px;
+}
+
+.feed {
+  float: left;
+  margin: 5px;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.searchMoreFriends-box {
+  background-color: rgb(208, 213, 214);
+  border-radius: 15px;
+  margin: 5px;
+  height: 100px;
+  width: 99%;
+  margin: 5px;
+}
+
+
+
+/* ===================================================================== */
+/* style for cards */
+
+
