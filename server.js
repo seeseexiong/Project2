@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const path = require('path');
 const passport = require('passport'); 
-const serve = require('express-static')
+const static = require('express-static')
 
 // Port and Models
 var models = require("./models");
@@ -31,8 +31,14 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 //Static
-app.use(serve('public'))
+// app.use(express.static('public'));
 
+// app.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname + 'public/index.html'));
+// });
+// app.get('/user', function(req, res) {
+//   res.sendFile(path.join(__dirname + '/public/user.html'));
+// });
 
 // Handlebars --------------------------
 // app.engine(
@@ -42,8 +48,6 @@ app.use(serve('public'))
 //   })
 // );
 // app.set("view engine", "handlebars");
-
-app.use(express.static(__dirname + '/public'));
 
 // app.engine('handlebars', exphbs({
 //   extname: '.handlebars',
@@ -55,12 +59,28 @@ app.use(express.static(__dirname + '/public'));
 // app.set('views',path.join(__dirname,'/views'));
 
 
-
 // Routes ======================================================
+// USER page ========================================================
+app.get('/user', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/user.html'));
+});
+// Stories page ========================================================
+app.get('/stories', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/stories.html'));
+});
+// Blog Post page ========================================================
+app.get('/blog-post', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/blog-post.html'));
+});
+// Friends & Followers page ========================================================
+app.get('/friends', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/friends.html'));
+});
+
 
 //require("./routes/apiRoutes")(app, passport);
 require("./routes/auth.js")(app, passport);
-//require("./routes/htmlRoutes")(app, passport);
+require("./routes/htmlRoutes.js")(app, passport);
 
 
 //load passport strategies
