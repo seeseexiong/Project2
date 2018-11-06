@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var flash = require('connect-flash');
+const path = require('path');
 
 // function isLoggedIn(req, res, next) {
 //     if (req.isAuthenticated())
@@ -12,15 +12,13 @@ var flash = require('connect-flash');
 module.exports = function (app, passport) {
     // new handlebar routes ------------------------------------------------------------------------
     // Home Page ===================================================
-    router.get('/', function (req, res) {
-        res.render("index");
-    });
+    
+    // router.get('/', function (req, res) {
+    //     res.render("index");
+    // });
     // User Page ===================================================
-    router.get('/user', function (req, res) {
-        res.render("user");
-    });
 
-
+ 
 
 
     //-----------------------------------------------------------------------------------------------
@@ -31,7 +29,7 @@ module.exports = function (app, passport) {
     });
     // signup redirects
     router.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/signin', //can change where to redirect
+        successRedirect: '/', //can change where to redirect
         failureRedirect: '/signup'
     }
     ));
