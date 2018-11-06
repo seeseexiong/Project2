@@ -37,6 +37,12 @@ app.use(cookieParser()); // read cookies (needed for auth)
 // app.use(serve('public'))
 app.use(express.static("public"));
 
+// app.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname + 'public/index.html'));
+// });
+// app.get('/user', function(req, res) {
+//   res.sendFile(path.join(__dirname + '/public/user.html'));
+// });
 
 // Handlebars --------------------------
 // app.engine(
@@ -59,8 +65,24 @@ app.use(express.static("public"));
 // app.set('views',path.join(__dirname,'/views'));
 
 
-
 // Routes ======================================================
+// USER page ========================================================
+app.get('/user', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/user.html'));
+});
+// Stories page ========================================================
+app.get('/stories', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/stories.html'));
+});
+// Blog Post page ========================================================
+app.get('/blog-post', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/blog-post.html'));
+});
+// Friends & Followers page ========================================================
+app.get('/friends', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/friends.html'));
+});
+
 
 require("./routes/apiRoutes")(app, passport);
 require("./routes/auth.js")(app, passport);
