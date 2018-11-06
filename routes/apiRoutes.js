@@ -80,13 +80,55 @@ module.exports = function(app) {
       res.json(err)
     })
   });
-  app.get('/api/searchHeadlines', function(req, res) {
 
+  // app.get('/api/searchHeadlinesByCategory', function(req, res) {
+  //   newsapi.v2
+  //     .topHeadlines({
+  //       category: /*Search term */'business',
+  //       language: 'en',
+  //       country: 'us',
+  //     })
+  //     .then(response => {
+  //       console.log(response);
+  //       res.json(response);
+  //       /*
+  //       {
+  //         status: "ok",
+  //         articles: [...]
+  //       }
+  //     */
+  //     }).catch(function (err) {
+  //       console.log(err)
+  //       res.sendStatus(500)
+  //     })
+  // });
+
+  // app.get('/api/searchHeadlinesBySource', function(req, res) {
+  //   newsapi.v2
+  //     .topHeadlines({
+  //       sources: "bbc-news",
+  //     })
+  //     .then(response => {
+  //       console.log(response);
+  //       res.json(response);
+  //       /*
+  //       {
+  //         status: "ok",
+  //         articles: [...]
+  //       }
+  //     */
+  //     }).catch(function (err) {
+  //       console.log(err)
+  //       res.sendStatus(500)
+  //     })
+  // });
+
+  app.get('/api/searchHeadlinesByKeyword', function(req, res) {
     newsapi.v2
-      .topHeadlines({
-        category: searchTerm,
+      .everything({
+        q: /*Search Term */'war',
         language: 'en',
-        country: 'us',
+        sortBy: 'relevancy'
       })
       .then(response => {
         console.log(response);
@@ -97,26 +139,12 @@ module.exports = function(app) {
           articles: [...]
         }
       */
-      });
-  });
-  app.get('/api/searchHeadlines', function(req, res) {
-    newsapi.v2
-      .topHeadlines({
-        category: /*Search term */'business',
-        language: 'en',
-        country: 'us',
+      }).catch(function (err) {
+        console.log(err)
+        res.sendStatus(500)
       })
-      .then(response => {
-        console.log(response);
-        res.json(response);
-        /*
-        {
-          status: "ok",
-          articles: [...]
-        }
-      */
-      });
   });
+
   app.get("/", (req,res) => {
     db.Comment.findAll()
   })

@@ -10,28 +10,28 @@ const exphbs = require("express-handlebars");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
-const path = require('path');
 const passport = require('passport'); 
 
-// Port and Models
-var models = require("./models");
+var db = require("./models");
+
+// Express
+var app = express();
 var PORT = process.env.PORT || 3000;
 
+// Middleware Config ======================================================
 
-// Express --------------------------
-var app = express();
-var app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cookieParser()); // read cookies (needed for auth)
+app.use(express.static("public"));
 
 
-// Passport --------------------------
-app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+// Passport 
+//require('./config/passport/passport')(app);
 
 
-// Handlebars --------------------------
+
+// Handlebars
 app.engine(
   "handlebars",
   exphbs({
@@ -43,12 +43,13 @@ app.set("view engine", "handlebars");
 
 // Routes ======================================================
 require("./routes/apiRoutes")(app, passport);
-require("./routes/auth.js")(app, passport);
+//require("./routes/auth.js")(app, passport);
 require("./routes/htmlRoutes")(app, passport);
 
 
 //load passport strategies
-require('./config/passport/passport.js')(passport, models.user);
+//require('./config/passport/passport.js');
+
 
 var syncOptions = { force: false };
 
@@ -59,12 +60,18 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ==========================================
-models.sequelize.sync(syncOptions).then(function() {
+db.sequelize.sync(syncOptions).then(function() {
   console.log(process.env.NODE_ENV)
   app.listen(PORT, function() {
     console.log(
-      "Some badass people starting baddass servers on: http://localhost:" + PORT);
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT,
+    );
     
   });
 });
+
+//module.exports = app;
+
 
