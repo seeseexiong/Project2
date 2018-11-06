@@ -1,6 +1,16 @@
 var db = require("../models");
 
 module.exports = (app) =>{
+    db.Post.createPost({
+    title: req.body.title,
+    body: req.body.body,
+}).then(function(post) { 
+        post.dataValues.user = u;           
+        res.json(post);                                
+    }).catch(function(err){
+        console.log(err);
+        res.sendStatus(500);
+    });                    
     //show all posts
     app.get("/api/posts", (req,res) =>{
         var query = {};
