@@ -2,7 +2,7 @@ var db = require("../models");
 var path = require("path");
 
 app.get('/:postId/comment')// Add comment to a post
-        .post(function(req,res){ 
+        .post((req,res)=>{ 
             models.Comment.create({
                 userId: req.body.userId,
                 text: req.body.comment,

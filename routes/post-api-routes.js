@@ -4,10 +4,10 @@ module.exports = (app) =>{
     db.Post.createPost({
     title: req.body.title,
     body: req.body.body,
-}).then(function(post) { 
+}).then((post) => { 
         post.dataValues.user = u;           
         res.json(post);                                
-    }).catch(function(err){
+    }).catch((err)=>{
         console.log(err);
         res.sendStatus(500);
     });                    

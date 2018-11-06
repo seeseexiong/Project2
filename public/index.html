@@ -17,22 +17,15 @@
 
 <body>
 
-    <nav class="nav-extended" class="white" role="navigation">
-        <div class="nav-wrapper" id="nav-margin">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
             <a id="logo-container" href="#" class="brand-logo">Social Stories</a>
-         
             <ul class="right hide-on-med-and-down">
                 <li>
-                        <div class="center row">
-                                <div class="col s12 " >
-                                  <div class="row" id="topbarsearch">
-                                    <div class="input-field col s6 s12 ">
-                                      <i class=" material-icons prefix">search</i>
-                                      <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete " >
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>          
+                    
+                    <a href="#" >
+                        <i class="fas fa-search"></i>
+                    </a>
                 </li>
                 <li>
 
@@ -230,11 +223,7 @@
             </div>
         </div>
         <div class="parallax">
-<<<<<<< HEAD:public/index.html
-            <img src="./images/background_1.jpg" alt="Unsplashed background img 1">
-=======
             <img src="public/images/background_1.jpg" alt="Unsplashed background img 1">
->>>>>>> ef109913fef29ac5d2fc7b1aee95e85ea6890252:index.html
         </div>
     </div>
 
@@ -627,23 +616,18 @@
                 } // End if
                 return false;
             });
+        });
+
+        // modal open
+
+        $(document).ready(function () {
+
             $('#signInModal').modal();
             $('#signUpModal').modal();
             $('#modal1').modal();
             $('#modal2').modal();
 
         });
-
-        // modal open
-
-        // $(document).ready(function () {
-
-        //     $('#signInModal').modal();
-        //     $('#signUpModal').modal();
-        //     $('#modal1').modal();
-        //     $('#modal2').modal();
-
-        // });
 
 
 
@@ -653,7 +637,6 @@
 
     <script src="public/js/materialize.js"></script>
     <script src="public/js/init.js"></script>
-    <script src="public/js/index.js"></script>
 
 </body>
 
