@@ -6,10 +6,7 @@ module.exports = function (app) {
   app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../index.html"));
   });
-<<<<<<< HEAD
-=======
 
->>>>>>> 725069473b172d2d01091f70c109ce6f3953f1ea
   // Main LogIn Page ========================================================
   app.get('/login/main', function (req, res) {
     // render the page and pass in any flash data if it exists
