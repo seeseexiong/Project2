@@ -12,28 +12,67 @@ module.exports = (app) =>{
         res.sendStatus(500);
     });                    
     //show all posts
-    app.get("/api/posts", (req,res) =>{
-        var query = {};
-        if(req.query.userid){
-            query.userid = req.query.userid;    
-        }
-        db.Post.findall({
-            where: query
-        }). then((dbPost)=>{
-            res.json(dbPost);
-        });
-    });
+    app.get('/user/:id', (req,res) => { models.Post.findAll({
+        include: [ { 
+                    model: models.user,
+                    attributes: ['id','username']
+                    },
+                     { 
+                     model: models.post, 
+         include: {
+                    model: models.Comment,
+                    attributes: ['id','username']
+                    }
+                    }
+                    ],
+        order: [
+                    ['createdAt', 'DESC']
+                ]
+            }).then((posts) => {
+                Promise.all(posts.map((post) => {
+                    return post.countLikes();
+                })).then((likes)=>{
+                    var postsWithLikes = posts.map((post, index) => {
+                        post.dataValues.likes = likes[index];
+                        return post;
+                    });
+
+                    res.json(postsWithLikes);
+                })                                
+            }).catch((err) =>{
+                console.log(err);
+                res.sendStatus(500);
+            });
+        })
+        
     //Find specific
-    app.get("/api/posts/:id", (req, res) => {
-        db.Post.findOne({
-          where: {
-            id: req.params.id
-          }
-        }).then((dbPost) => {
-          console.log(dbPost);
-          res.json(dbPost);
+    app.get('/l/:postId', (req, res,)=>{ // get single post by post ID   
+            models.Post.findById(req.params.postId,
+                                { include: [ 
+                                            { 
+                                                model: models.user,
+                                                attributes: ['id','username',]
+                                            },
+                                            { 
+                                                model: models.Comment, 
+                                                include: {
+                                                            model: models.user,
+                                                            attributes: ['id','username',]
+                                            }
+                                        }
+                                    ] 
+                                }).then((s)=> {
+                                    res.json(s);
+                                }); 
         });
-      });
+        app.get('/user/:userId', (req, res, next) =>{  // get posts of a single users specific post
+            models.Post.findAll({ where: { userId: req.params.userId }}).then((posts) => {
+                res.json(posts);
+            }).catch(()=>{
+                res.sendStatus(400)
+            }); 
+        });
+
       //Save
       app.post("/api/posts", (req, res) => {
         db.Post.create(req.body).then((dbPost) => {
