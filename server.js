@@ -20,7 +20,6 @@ var PORT = process.env.PORT || 3000;
 
 // Express --------------------------
 var app = express();
-var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

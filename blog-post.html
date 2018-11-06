@@ -15,8 +15,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <style>
+        .postNav {
+            margin: 20px 0;}
         .logo {
-            display: inline;
+            display: inline-flex;
+            align-items: center;}
+        .logo-icon {    
+            display: inline-flex;
+            margin: 5px;}
+        .logo-text {
+            display: block;
+            margin: 0;}
+        
+        .header {
+            margin: 10px 40px;
+            padding: 0 20px;
+        }   
+
+        #actionButton {
+            position: absolute !important;
+            display: inline-block;
+            right: auto;
+            bottom: auto;
         }
     </style>
 
@@ -24,33 +44,43 @@
 
 <body>
 
-    <div class="container">
-        <!-- New Story Nav -->
-        <div class="row">
-            <div class="col s4">
-                <span class="logo">
-                    <i class="material-icons large" style="display:inline">font_download</i>
-                    <h5 style="display:inline">Social Story</h5>
+
+    <!-- New Story Nav -->
+    <div class="row postNav">
+        <div class="col s12 m6">
+            <div class="logo">
+                <i class="material-icons medium logo-icon" >font_download</i>
+                <span class="logo-text">
+                    <h5 class="logo-text">Social Story</h5>
+                    <p class="logo-text"> New Draft </p>
                 </span>
             </div>
-            <div class="col s8">
-                <div class="right">
-                    <a class="waves-effect waves-light btn-small">Button</a>
-                    <a class="waves-effect waves-light btn-small">Button<span class="new badge">4</span></a>
-                    <a class="waves-effect waves-light btn-small">Button <i class="material-icons">person_outline</i></a>
+        </div>
+        <div class="col s12 m6">
+            <div class="right ">
+                <a class="waves-effect waves-light btn-small">Save</a>
+                <a class="waves-effect waves-light btn-small">Help</a>
+                <a class="waves-effect waves-light btn-small">Settings <i class="material-icons">person_outline</i></a>
+            </div>
+        </div>
+    </div>
+
+        <!-- Post Page Header -->
+        <div class="row">
+            <div class="col m12">
+                <div class="header">
+                    <h2>Write a ...
+                        <span class="txt-rotate" data-period="2000" data-rotate='[ "story.", "poem.", "novel.", "review.", "idea." ]'></span>
+                    </h2>
+                    <h5 class="flow-text">A single &lt;idea&gt; is all you need to start.</h5>
+                   <hr>
                 </div>
             </div>
         </div>
 
-        <!-- Username Draft -->
-        <div class="row">
-            <div class="col s12">
-                <i class="material-icons">account_circle</i>
+        <!-- <div class="js-titleLabel u-paddingTop19 u-absolute u-top0 u-right0 u-transition--transform200Spring u-transition--fadeOut100" style="transform: translate3d(0px, 0px, 0px);">Title</div> -->
 
-
-            </div>
-
-        </div>
+<div class="container">
         <!-- Post Title -->
         <div class="row">
             <div class="col s1">
@@ -65,7 +95,7 @@
         <!-- Post Body -->
         <div class="row">
             <div class="col s1">
-                <div id="actionButton" class="fixed-action-btn horizontal direction-top direction-left" style="position: absolute; display: inline-block; right: 24px">
+                <div id="actionButton" class="fixed-action-btn horizontal direction-top direction-right">
                     <a class="btn-floating btn-large red">
                         <i class="large material-icons">mode_edit</i>
                     </a>
@@ -83,33 +113,80 @@
             </div>
         </div>
 
-        
+
 
 
 
 
 
         <script>
+            var TxtRotate = function (el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.tick();
+                this.isDeleting = false;
+            };
+
+            TxtRotate.prototype.tick = function () {
+                var i = this.loopNum % this.toRotate.length;
+                var fullTxt = this.toRotate[i];
+
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+                var that = this;
+                var delta = 300 - Math.random() * 100;
+
+                if (this.isDeleting) { delta /= 2; }
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    delta = this.period;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.loopNum++;
+                    delta = 500;
+                }
+
+                setTimeout(function () {
+                    that.tick();
+                }, delta);
+            };
+
+            window.onload = function () {
+                var elements = document.getElementsByClassName('txt-rotate');
+                for (var i = 0; i < elements.length; i++) {
+                    var toRotate = elements[i].getAttribute('data-rotate');
+                    var period = elements[i].getAttribute('data-period');
+                    if (toRotate) {
+                        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                    }
+                }
+                // INJECT CSS
+                var css = document.createElement("style");
+                css.type = "text/css";
+                css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+                document.body.appendChild(css);
+            };
+
+
 
             document.addEventListener('DOMContentLoaded', function () {
                 var elems = document.querySelectorAll('.fixed-action-btn');
                 var instances = M.FloatingActionButton.init(elems, {
-                    direction: 'left'
+                    direction: 'bottom'
                 });
             });
 
 
-            // $(document).ready(function () {
-            //     var instance = M.FloatingActionButton.getInstance(elem);
-            //     instance.close();
-
-            //     $('#actionButton').floatingActionButton({
-            //         direction: 'bottom',
-            //         hoverEnabled: false,
-            //         isOpen: false
-            //     })
-
-            // });
 
 
         </script>
