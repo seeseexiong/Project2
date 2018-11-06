@@ -10,7 +10,7 @@ module.exports = function (app) {
   // Main LogIn Page ========================================================
   app.get('/login/main', function (req, res) {
     // render the page and pass in any flash data if it exists
-    res.render("login-main", { message: req.flash('loginMessage') });
+    res.render("login-main" );
   });
   // cms route loads cms.html
   app.get("/cms", function(req, res) {
@@ -23,22 +23,10 @@ module.exports = function (app) {
   // Current Users Login ========================================================
   app.get('/login', function (req, res) {
     // render the page and pass in any flash data if it exists
-    res.render("login", { message: req.flash('loginMessage') });
+    res.render("login" );
   });
 
-  // process the login form
-  // app.post('/login', do all our passport stuff here);
-
-  // SignUp Page ========================================================
-  app.get('/signup', function (req, res) {
-
-    // render the page and pass in any flash data if it exists
-    res.render("signup", { message: req.flash('signupMessage') });
-  });
-
-  // process the signup form
-  // app.post('/signup', do all our passport stuff here);
-
+  
   // Profile Page ========================================================
   // want protected so you have to be logged in to visit
   // we will use route middleware to verify this (the isLoggedIn function)
