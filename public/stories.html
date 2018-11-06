@@ -61,18 +61,35 @@
 
             <ul id="nav-mobile" class="sidenav">
                 <li>
-                    <a href="#">Social Stories</a>
+                    <a href="index.html">Social Stories</a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fas fa-search"></i>
-                    </a>
+                    <div class="center row">
+                        <div class="col s12 ">
+                            <div class="row" id="topbarsearch">
+                                <div class="input-field col s6 s12 ">
+                                    <i class=" material-icons prefix">search</i>
+                                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li>
-                    <a href="#">Log in</a>
+                    <a href="blog-post.html">Write a story</a>
                 </li>
                 <li>
-                    <a href="#">Get started</a>
+                    <a href="stories.html">Stories</a>
+                </li>
+                <li class="divider" tabindex="-1"></li>
+                <li>
+                    <a href="friend-follwers2.html">Followed</a>
+                </li>
+                <li>
+                    <a href="favorites.js">Bookmarks</a>
+                </li>
+                <li>
+                    <a href="#!">Sign out</a>
                 </li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger">
@@ -81,16 +98,28 @@
         </div>
     </nav>
 
-   
+
 
     <div id="navbar" class="center" id="allNews" role="navigation">
-            <a class="center" href="#home">Drafts</a>
-            <a class="center" href="#stories.html">Published</a>
-            <a class="center" href="blog-post.html">Write a story</a>
-      
-        </div>
-        <div class="container"><h3>Your Stories...</h3></div>
-        
+        <a class="center" href="#home">Drafts</a>
+        <a class="center" href="#stories.html">Published</a>
+        <a class="center" href="blog-post.html">Write a story</a>
+
+    </div>
+    <div class="container">
+        <h3>Your Stories...</h3>
+        <hr>
+
+        <!-- Stories go here =============================================================== -->
+
+        <div class="posts"></div>
+
+
+
+
+    </div>
+
+
 
 
 
