@@ -1,5 +1,5 @@
 /* //------------------------------------------------------------
-  SERVER.JS 
+  SERVER.JS 567
 */ //-------------------------------------------------------------
 
 // Require ======================================================
@@ -12,6 +12,7 @@ const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const path = require('path');
 const passport = require('passport'); 
+const serve = require('express-static')
 
 // Port and Models
 var models = require("./models");
@@ -28,6 +29,9 @@ app.use(bodyParser.json());
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
+
+//Static
+app.use(serve('public'))
 
 
 // Handlebars --------------------------
