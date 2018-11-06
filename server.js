@@ -20,7 +20,6 @@ var PORT = process.env.PORT || 3000;
 
 // Express --------------------------
 var app = express();
-var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -32,13 +31,23 @@ app.use(passport.session()); // persistent login sessions
 
 
 // Handlebars --------------------------
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+// app.engine(
+//   "handlebars",
+//   exphbs({
+//     defaultLayout: "main"
+//   })
+// );
+// app.set("view engine", "handlebars");
+
+app.engine('handlebars', exphbs({
+  extname: '.handlebars',
+  defaultLayout: 'main',
+  partialsDir: path.join(__dirname, '/views/partials'),
+  layoutsDir: path.join(__dirname, '/views/layouts')
+}));
+app.set('view engine', 'handlebars');
+app.set('views',path.join(__dirname,'/views'));
+
 
 
 // Routes ======================================================
