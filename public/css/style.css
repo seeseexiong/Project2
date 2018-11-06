@@ -141,7 +141,6 @@ nav.nav-center ul li a {
   font-weight: bold;
   color: rgba(0, 0, 0, 0.753);
 }
-<<<<<<< HEAD
 #nav-margin {
   margin-left: 2%;
   margin-right: 2%;
@@ -160,7 +159,9 @@ nav.nav-center ul li a {
 ul li {
   height: 70px;
 }
-=======
+#second {
+  display: none;
+}
 /* grids for the friends feed ===========================================*/
 .headerPlaceholder {
   background: rgb(255, 212, 212);
@@ -220,4 +221,3 @@ border-radius: 15px;
 /* style for cards */
 
 
->>>>>>> 725069473b172d2d01091f70c109ce6f3953f1ea
