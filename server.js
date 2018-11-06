@@ -43,22 +43,25 @@ app.use(serve('public'))
 // );
 // app.set("view engine", "handlebars");
 
-app.engine('handlebars', exphbs({
-  extname: '.handlebars',
-  defaultLayout: 'main',
-  partialsDir: path.join(__dirname, '/views/partials'),
-  layoutsDir: path.join(__dirname, '/views/layouts')
-}));
-app.set('view engine', 'handlebars');
-app.set('views',path.join(__dirname,'/views'));
+app.use(express.static(__dirname + '/public'));
+
+// app.engine('handlebars', exphbs({
+//   extname: '.handlebars',
+//   defaultLayout: 'main',
+//   partialsDir: path.join(__dirname, '/views/partials'),
+//   layoutsDir: path.join(__dirname, '/views/layouts')
+// }));
+// app.set('view engine', 'handlebars');
+// app.set('views',path.join(__dirname,'/views'));
 
 
 
 // Routes ======================================================
-require("./routes/apiRoutes")(app, passport);
+
+//require("./routes/apiRoutes")(app, passport);
 require("./routes/auth.js")(app, passport);
-require("./routes/htmlRoutes")(app, passport);
-require("./routes/likes")(app);
+//require("./routes/htmlRoutes")(app, passport);
+
 
 //load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
