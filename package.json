@@ -1,7 +1,7 @@
 {
   "name": "project2",
   "version": "1.0.0",
-  "description": "Api Routes:\r Method|----Path---------|--Type--|----Data in----|-----Data out-----|----description-------------|\r --------------------------------------------------------------------------------------------\r GET   |      /          |html    |---------------| View HTML        | Display main page          |\r GET   | /api/mainPage   |data    |User Favorites | {User.Favorites} | Grabbing Main Page News    |",
+  "description": "Api Routes",
   "main": "server.js",
   "directories": {
     "test": "test"
