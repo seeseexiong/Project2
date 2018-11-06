@@ -20,7 +20,9 @@ var PORT = process.env.PORT || 3000;
 
 // Middleware Config ======================================================
 
-//app.use(bodyParser.urlencoded({ extended: false }));
+// Express --------------------------
+var app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(express.static("public"));
@@ -30,15 +32,24 @@ app.use(express.static("public"));
 //require('./config/passport/passport')(app);
 
 
+// Handlebars --------------------------
+// app.engine(
+//   "handlebars",
+//   exphbs({
+//     defaultLayout: "main"
+//   })
+// );
+// app.set("view engine", "handlebars");
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
+app.engine('handlebars', exphbs({
+  extname: '.handlebars',
+  defaultLayout: 'main',
+  partialsDir: path.join(__dirname, '/views/partials'),
+  layoutsDir: path.join(__dirname, '/views/layouts')
+}));
+app.set('view engine', 'handlebars');
+app.set('views',path.join(__dirname,'/views'));
+
 
 
 // Routes ======================================================
