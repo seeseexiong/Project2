@@ -3,6 +3,20 @@ var path = require("path");
 var static = require("express-static")
 const express = require("express");
 const app = express();
+const webhoseio = require('webhoseio');
+
+const client = webhoseio.config({token: '1a43be81-0d4e-4978-b200-a25ba4130e1e'});
+client.query('filterWebContent', {q: 'github'})
+  .then(output => {
+    console.log(output['posts'][0]['text']); // Print the text of the first post
+    console.log(output['posts'][0]['published']); // Print the text of the first post publication date
+});
+
+// Get the next batch of posts
+client.getNext()
+  .then(output => {
+    console.log(output['posts'][0]['thread']['site']); // Print the site of the first post
+  });
 
 
 module.exports = function (app) {

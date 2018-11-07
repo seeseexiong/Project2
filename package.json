@@ -13,16 +13,21 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.1.0",
+    "es6-promise": "4.2.5",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "express-static": "^1.2.6",
+    "isomorphic-fetch": "2.2.1",
+    "moment": "2.22.2",
     "mysql2": "^1.6.1",
     "newsapi": "^2.4.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "sequelize": "^4.41.0"
+    "react-native-elements": "0.19.1",
+    "sequelize": "^4.41.0",
+    "webhoseio": "1.0.2"
   },
   "devDependencies": {},
   "scripts": {
