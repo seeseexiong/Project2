@@ -1,11 +1,30 @@
 {
   "name": "project2",
   "version": "1.0.0",
-  "description": "Api Routes:\r Method|----Path---------|--Type--|----Data in----|-----Data out-----|----description-------------|\r --------------------------------------------------------------------------------------------\r GET   |      /          |html    |---------------| View HTML        | Display main page          |\r GET   | /api/mainPage   |data    |User Favorites | {User.Favorites} | Grabbing Main Page News    |",
+  "description": "The primary goal of this project is to enable the user to keep up with headline news, based off their interest.  Social Stories target anyone who likes to keep up with current events/news of their interest.  Our product addresses the time-consuming process searching for interesting headline news.  \r Social Stories is structured like a social media website. When the user first signs up, they will be asked what news categories they’re interested in.  On the user’s customize page, they will receive only the headlines news related to the categories they picked.   The user can also follow other users and see their posts on the customize page.",
   "main": "server.js",
   "directories": {
     "test": "test"
   },
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "express-static": "^1.2.6",
+    "mysql2": "^1.6.1",
+    "newsapi": "^2.4.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.41.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -20,23 +39,5 @@
   "bugs": {
     "url": "https://github.com/seeseexiong/Project2/issues"
   },
-  "homepage": "https://github.com/seeseexiong/Project2#readme",
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.18.3",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.4.3",
-    "dotenv": "^6.1.0",
-    "express": "^4.16.4",
-    "express-handlebars": "^3.0.0",
-    "express-session": "^1.15.6",
-    "express-static": "^1.2.6",
-    "mysql": "^2.16.0",
-    "mysql2": "^1.6.1",
-    "newsapi": "^2.4.0",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0",
-    "path": "^0.12.7",
-    "sequelize": "^4.41.0"
-  }
+  "homepage": "https://github.com/seeseexiong/Project2#readme"
 }
