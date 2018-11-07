@@ -62,48 +62,75 @@ $(document).ready(function () {
     $('#signUpModal').modal();
     $('#modal1').modal();
     $('#modal2').modal();
-    
-
-    
 
 });
 
+// News API =================================================================
 
 $.ajax({
     url:
-      "https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey=8eb98b7edadc498986a4c7408ee44ab3",
+        "https://newsapi.org/v2/top-headlines?sources=national-geographic,entertainment-weekly&apiKey=8eb98b7edadc498986a4c7408ee44ab3",
     method: "GET",
-    error: function() {
-      console.log("fucked");
+    error: function () {
+        console.log("fucked");
     },
-    success: function(data) {
-      processData(data);
+    success: function (data) {
+        processData(data);
     }
-  });
-  
-  function processData(data) {
+});
+
+function processData(data) {
     var articleItems = [];
-  
+
     for (var i = 0; i < data.articles.length; i++) {
-      var author = data.articles[i].author;
-      var title = data.articles[i].title;
-      var description = data.articles[i].description;
-      var artUrl = data.articles[i].url;
-  
-      var $author = $('<div class="author">Author: ' + author + "</div >");
-      var $title = $(
-        "<a href=" + artUrl + '><div class="title">' + title + "</div ></a>"
-      );
-      var $description = $(
-        "<a href=" +
-          artUrl +
-          '><div class="description">' +
-          description +
-          "</div ></a>"
-      );
-  
-      $(".wrapper").append($author, $title, $description);
-      console.log(artUrl);
+
+
+        var newsDiv = $("<div class='card'>");
+
+        var title = data.articles[i].title;
+        var description = data.articles[i].description;
+        var artUrl = data.articles[i].url;
+        var image = data.articles[i].urlToImage;
+
+        var cardDiv = $("<div>");
+        cardDiv.addClass("card-header");
+        var headerName = $("<h4>");
+        headerName.text(name);
+        cardDiv.append(headerName);
+        newsDiv.append(cardDiv);
+
+        var cardBody = $("<div>")
+        cardBody.addClass("card-body");
+        newsDiv.append(cardBody);
+
+        var cardRow = $("<div>");
+        cardRow.addClass("row");
+
+        cardBody.append(cardRow);
+        // Image result from News Api
+        var colOne = $("<div>");
+        colOne.addClass("col-lg-4");
+        cardRow.append(colOne);
+
+        var imgDisplay = $("<img>");
+        imgDisplay.attr("width", 400);
+        imgDisplay.attr("height", 250);
+        imgDisplay.attr("src", image);
+        colOne.append(imgDisplay);
+
+        var $title = $(
+            "<a href=" + artUrl + '><div class="title">' + title + "</div ></a>"
+        );
+        var $description = $(
+            "<a href=" +
+            artUrl +
+            '><div class="description">' +
+            description +
+            "</div ></a>"
+        );
+
+        $(".wrapper").append(imgDisplay, $title, $description,"_______________________________________________________________________________________",  );
+        console.log(artUrl);
     }
-  }
-  
+}
+

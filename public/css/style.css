@@ -167,6 +167,9 @@ form {
 i.fas.fa-user-plus {
   color: white;
 }
+.wrapper {
+  background-color : #dad8d8;
+}
 
 /* grids for the friends feed ===========================================*/
 .headerPlaceholder {
