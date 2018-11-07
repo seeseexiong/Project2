@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,191 +17,141 @@
 </head>
 
 <body>
-        <nav class="nav-extended" class="white" role="navigation">
-                <div class="nav-wrapper" id="nav-margin">
-                    <a id="logo-container" href="index.html" class="brand-logo">Social Stories</a>
-        
-                    <ul class="right hide-on-med-and-down">
-                        <li>
-                            <div class="center row">
-                                <div class="col s12 ">
-                                    <div class="row" id="topbarsearch">
-                                        <div class="input-field col s6 s12 ">
-                                            <i class=" material-icons prefix">search</i>
-                                            <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
-                                        </div>
-                                    </div>
+    <nav class="nav-extended" class="white" role="navigation">
+        <div class="nav-wrapper" id="nav-margin">
+            <a id="logo-container" href="user.html" class="brand-logo">Social Stories</a>
+
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <div class="center row">
+                        <div class="col s12 ">
+                            <div class="row" id="topbarsearch">
+                                <div class="input-field col s6 s12 ">
+                                    <i class=" material-icons prefix">search</i>
+                                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
                                 </div>
                             </div>
-                        </li>
-        
-                        <li>
-                            <!-- Dropdown Trigger -->
-                            <a class='dropdown-trigger' href='#' data-target='dropdown1'>Profile</a>
-        
-                            <!-- Dropdown Structure -->
-                            <ul id='dropdown1' class='dropdown-content'>
-                                <li>
-                                    <a href="blog-post.html">Write a story</a>
-                                </li>
-                                <li>
-                                    <a href="stories.html">Stories</a>
-                                </li>
-                                <li class="divider" tabindex="-1"></li>
-                                <li>
-                                    <a href="friend-follwers2.html">Followed</a>
-                                </li>
-                                <li>
-                                    <a href="favorites.js">Bookmarks</a>
-                                </li>
-                                <li>
-                                    <a href="#!">Sign out</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-        
-                    <ul id="nav-mobile" class="sidenav">
-                        <li>
-                            <a href="index.html">Social Stories</a>
-                        </li>
-                        <li>
-                            <div class="center row">
-                                <div class="col s12 ">
-                                    <div class="row" id="topbarsearch">
-                                        <div class="input-field col s6 s12 ">
-                                            <i class=" material-icons prefix">search</i>
-                                            <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-trigger' href='#' data-target='dropdown1'>Profile</a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
                         <li>
                             <a href="blog-post.html">Write a story</a>
                         </li>
                         <li>
                             <a href="stories.html">Stories</a>
                         </li>
-                        <li class="divider" tabindex="-1"></li>
                         <li>
-                            <a href="friend-follwers2.html">Followed</a>
+                            <a href="#">Followed</a>
                         </li>
                         <li>
                             <a href="favorites.js">Bookmarks</a>
                         </li>
                         <li>
-                            <a href="#!">Sign out</a>
+                            <a href="/logout">Sign out</a>
                         </li>
                     </ul>
-                    <a href="#" data-target="nav-mobile" class="sidenav-trigger">
-                        <i class="material-icons">menu</i>
-                    </a>
-                </div>
-            </nav>
+                </li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li>
+                    <a href="index.html">Social Stories</a>
+                </li>
+                <li>
+                    <div class="center row">
+                        <div class="col s12 ">
+                            <div class="row" id="topbarsearch">
+                                <div class="input-field col s6 s12 ">
+                                    <i class=" material-icons prefix">search</i>
+                                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="blog-post.html">Write a story</a>
+                </li>
+                <li>
+                    <a href="stories.html">Stories</a>
+                </li>
+                <li class="divider" tabindex="-1"></li>
+                <li>
+                    <a href="#">Your network</a>
+                </li>
+                <li>
+                    <a href="favorites.js">Bookmarks</a>
+                </li>
+                <li>
+                    <a href="/logout">Sign out</a>
+                </li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
     <div id="navbar" class="center" id="allNews" role="navigation">
         <a class="waves-effect waves-light modal-trigger" href="#modal1">Search Friend</a>
-                <!-- Modal Structure -->
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <h4 class="left-align">Search Friends</h4>
-                            <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                            <label for="textarea1">Name</label>
-                                                <button class="btn waves-effect waves-light right-align" type="submit" name="action">Search
-                                                    <i class="material-icons right">send</i>
-                                                </button>
-                                        </div>
-                                    </div>
-                                </form>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h5 class="center-align">Search Friends</h5>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Name</label>
+                                <button class="btn waves-effect waves-light right-align" type="submit" name="action">Search
+                                    <i class="material-icons right">send</i>
+                                </button>
                             </div>
-                        <h4 class="left-align">Search Article</h4>
-                            <div class="row">
-                                <form class="col s12">
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                            <label for="textarea1">Title</label>
-                                                <button class="btn waves-effect waves-light right-align" type="submit" name="action">Search
-                                                    <i class="material-icons right">send</i>
-                                                </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                    </div>
+                        </div>
+                    </form>
                 </div>
-    </div> 
-<!-- navbar ends==================================================================================== -->
+                <h5 class="center-align">Search Article</h5>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Title</label>
+                                <button class="btn waves-effect waves-light right-align" type="submit" name="action">Search
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navbar ends==================================================================================== -->
     <!-- ============ followers ======================= -->
     <div class='main-container'>
 
         <div class="row">
-            <div class="col s6 #9fa8da indigo lighten-3 center-align follower-header"><h5>Followed</h5></div>
-            <div class="col s6 #9fa8da indigo lighten-3 center-align follower-header"><h5>Followers</h5></div>
-        </div>
-        <br><br>
-    <!-- =============== People I Followed ========================= -->
-        <div class="row">
-                <div class="col s6">
-                    <div class="col s12 center-align" >
-                        <div class="card-image">
-                            <img class="rounded responsive-img" src="images/WomanAvatar.png">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-action">
-                                <a href="#">FirstName LastName</a>
-                            </div>
-                        </div>
-                        <!-- Like/Dislike/Comment Buttons -->
-                        <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_up</i></a>
-                        <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_down</i></a>
-                        <a href="#!" class="btn waves-effect"><i class="small material-icons">comment</i></a>
-                    </div>
-                </div>
-    <!-- =============== My Followers =============================== -->
-                <div class="col s6">
-                    <div class="col s12 center-align" >
-                        <div class="card-image">
-                            <img class="rounded responsive-img" src="images/ManAvatar.png">
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-action">
-                                <a href="#">FirstName LastName</a>
-                            </div>
-                        </div>
-                        <!-- Like/Dislike/Comment Buttons -->
-                        <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_up</i></a>
-                        <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_down</i></a>
-                        <a href="#!" class="btn waves-effect"><i class="small material-icons">comment</i></a>
-                    </div>
-                </div>
-        </div>
-        <br><br>
-        <!-- =============== 2nd Post =============================== -->
-        <div class="row">
-            <div class="col s6">
-                <div class="col s12 center-align" >
-                    <div class="card-image">
-                        <img class="rounded responsive-img" src="images/ManAvatar.png">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-action">
-                            <a href="#">FirstName LastName</a>
-                        </div>
-                    </div>
-                    <!-- Like/Dislike/Comment Buttons -->
-                    <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_up</i></a>
-                    <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_down</i></a>
-                    <a href="#!" class="btn waves-effect"><i class="small material-icons">comment</i></a>
-                </div>
+            <div class="col s6 #9fa8da indigo lighten-3 center-align follower-header">
+                <h5>Followed</h5>
             </div>
-<!-- =============== My Followers =============================== -->
+            <div class="col s6 #9fa8da indigo lighten-3 center-align follower-header">
+                <h5>Followers</h5>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!-- =============== People I Followed ========================= -->
+        <div class="row">
             <div class="col s6">
-                <div class="col s12 center-align" >
+                <div class="col s6 center-align">
                     <div class="card-image">
                         <img class="rounded responsive-img" src="images/WomanAvatar.png">
                     </div>
@@ -210,105 +161,321 @@
                         </div>
                     </div>
                     <!-- Like/Dislike/Comment Buttons -->
-                    <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_up</i></a>
-                    <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_down</i></a>
-                    <a href="#!" class="btn waves-effect"><i class="small material-icons">comment</i></a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
+                </div>
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/WomanAvatar.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
                 </div>
             </div>
-    </div>
-    <br><br>
- <!-- =============== 3nd Post =============================== -->
-     <div class="row">
-        <div class="col s6">
-            <div class="col s12 center-align" >
-                <div class="card-image">
-                    <img class="rounded responsive-img" src="images/WomanAvatar.png">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-action">
-                        <a href="#">FirstName LastName</a>
+            <!-- =============== My Followers =============================== -->
+            <div class="col s6">
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/ManAvatar.png">
                     </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
                 </div>
-                <!-- Like/Dislike/Comment Buttons -->
-                <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_up</i></a>
-                <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_down</i></a>
-                <a href="#!" class="btn waves-effect"><i class="small material-icons">comment</i></a>
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/WomanAvatar.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
+                </div>
             </div>
         </div>
-    <!-- =============== My Followers =============================== -->
-        <div class="col s6">
-            <div class="col s12 center-align" >
-                <div class="card-image">
-                    <img class="rounded responsive-img" src="images/ManAvatar.png">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-action">
-                        <a href="#">FirstName LastName</a>
+        <br>
+        <br>
+        <!-- =============== 2nd Post =============================== -->
+        <div class="row">
+            <div class="col s6">
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/ManAvatar.png">
                     </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
                 </div>
-                <!-- Like/Dislike/Comment Buttons -->
-                <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_up</i></a>
-                <a href="#!" class="btn waves-effect"><i class="small material-icons">thumb_down</i></a>
-                <a href="#!" class="btn waves-effect"><i class="small material-icons">comment</i></a>
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/ManAvatar.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
+                </div>
+            </div>
+            <!-- =============== My Followers =============================== -->
+            <div class="col s6">
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/WomanAvatar.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
+                </div>
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/ManAvatar.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
+                </div>
             </div>
         </div>
+        <br>
+        <br>
+        <!-- =============== 3nd Post =============================== -->
+        <div class="row">
+            <div class="col s6">
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/WomanAvatar.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
+                </div>
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/WomanAvatar.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
+                </div>
+
+            </div>
+            <!-- =============== My Followers =============================== -->
+            <div class="col s6">
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/WomanAvatar.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
+                </div>
+                <div class="col s6 center-align">
+                    <div class="card-image">
+                        <img class="rounded responsive-img" src="images/ManAvatar.png">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-action">
+                            <a href="#">FirstName LastName</a>
+                        </div>
+                    </div>
+                    <!-- Like/Dislike/Comment Buttons -->
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_up</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">thumb_down</i>
+                    </a>
+                    <a href="#!" class="btn waves-effect">
+                        <i class="small material-icons">comment</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
-    <br><br><br><br>
-    </div>
 
 
-<script>
+    <script>
 
-    // When the user scrolls the page, execute myFunction 
-    window.onscroll = function () { myFunction() };
+        // When the user scrolls the page, execute myFunction 
+        window.onscroll = function () { myFunction() };
 
-    // Get the navbar
-    var navbar = document.getElementById("navbar");
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
 
-    // Get the offset position of the navbar
-    var sticky = navbar.offsetTop;
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
 
-    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-        } else {
-            navbar.classList.remove("sticky");
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
         }
-    }
-    $(document).ready(function () {
-        // Add smooth scrolling to all links
-        $("a").on('click', function (event) {
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
 
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
 
-                // Store hash
-                var hash = this.hash;
+                    // Store hash
+                    var hash = this.hash;
 
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function () {
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
 
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-            } // End if
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+            // ======================================== modal js ===========================================================
+            $(".modal").modal();
+
+
+
+
+
         });
-    // ======================================== modal js ===========================================================
-        $(".modal").modal();
 
 
-
-
-
-    });
-
-    
     </script>
 
     <!--  Scripts-->
@@ -316,4 +483,5 @@
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
 </body>
+
 </html>
