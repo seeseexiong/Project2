@@ -142,30 +142,48 @@
 
 
     <div class="row">
-        <header>
-            <h5>Featured for members</h5>
-        </header>
 
-        <div class="col s8">
 
-            <div class="wrapper">
-                <p class="top">Headline News</p>
+        <div class="col s7">
+            <div class="col s12 m7">
+                <div class="wrapper">
+                    <h3 class="top">Headline News</h3>
+
+                </div>
 
             </div>
-
         </div>
 
-        <!-- Blogger news -->
+
+    </div>
+
+    <!-- Blogger news -->
 
 
-        <div class="col s4">
+    <div class="col s4">
 
-                <!-- <div class="wrapper2">
-                        <p class="top">Headline News</p>
-        
-                    </div> -->
+        <header>
+            <h5>Popular social stories</h5>
+        </header>
 
+        <div class="col s12 m7">
+
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+    </div>
     </div>
 
     </div>
@@ -304,6 +322,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script>
+        const webhoseio = require('webhoseio');
+
+        const client = webhoseio.config({ token: '1a43be81-0d4e-4978-b200-a25ba4130e1e' });
+        client.query('filterWebContent', { q: 'github' })
+            .then(output => {
+                console.log(output['posts'][0]['text']); // Print the text of the first post
+                console.log(output['posts'][0]['published']); // Print the text of the first post publication date
+            });
+
+        // Get the next batch of posts
+        client.getNext()
+            .then(output => {
+                console.log(output['posts'][0]['thread']['site']); // Print the site of the first post
+            });</script>
 
 
 </body>
