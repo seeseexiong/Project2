@@ -18,38 +18,31 @@
         .postNav {
             margin: 20px 0;
         }
-
         .logo {
             display: inline-flex;
             align-items: center;
         }
-
         .logo-icon {
             display: inline-flex;
             margin: 5px;
         }
-
         .logo-text {
             display: block;
             margin: 0;
         }
-
         .header {
             margin: auto;
             padding: auto;
         }
-
         .card.horizontal {
             border-left: 20px solid;
             padding: 10px;
             align-items: center;
         }
-
         .author-card {
             margin: 0 auto;
             padding-left: 10px;
         }
-
         .post-box {
             margin-top: 45px;
             /* border: 1px solid #666;
@@ -218,7 +211,6 @@
 
 
         <script>
-
             // action button
             document.addEventListener('DOMContentLoaded', function () {
                 var elems = document.querySelectorAll('.fixed-action-btn');
@@ -226,7 +218,6 @@
                     direction: 'top'
                 });
             });
-
             // Type text 
             var TxtRotate = function (el, toRotate, period) {
                 this.toRotate = toRotate;
@@ -237,25 +228,18 @@
                 this.tick();
                 this.isDeleting = false;
             };
-
             TxtRotate.prototype.tick = function () {
                 var i = this.loopNum % this.toRotate.length;
                 var fullTxt = this.toRotate[i];
-
                 if (this.isDeleting) {
                     this.txt = fullTxt.substring(0, this.txt.length - 1);
                 } else {
                     this.txt = fullTxt.substring(0, this.txt.length + 1);
                 }
-
                 this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-
                 var that = this;
                 var delta = 300 - Math.random() * 100;
-
                 if (this.isDeleting) { delta /= 2; }
-
                 if (!this.isDeleting && this.txt === fullTxt) {
                     delta = this.period;
                     this.isDeleting = true;
@@ -264,12 +248,10 @@
                     this.loopNum++;
                     delta = 500;
                 }
-
                 setTimeout(function () {
                     that.tick();
                 }, delta);
             };
-
             window.onload = function () {
                 var elements = document.getElementsByClassName('txt-rotate');
                 for (var i = 0; i < elements.length; i++) {
@@ -285,10 +267,7 @@
                 css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
                 document.body.appendChild(css);
             };
-
-
        
-
         </script>
         <!--  Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
