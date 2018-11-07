@@ -12,7 +12,7 @@ module.exports = (app) =>{
         res.sendStatus(500);
     });                    
     //show all posts
-    app.get('/user/:id', (req,res) => { models.Post.findAll({
+    app.get('/post/:id', (req,res) => { models.Post.findAll({
         include: [ { 
                     model: models.user,
                     attributes: ['id','username']
@@ -46,7 +46,7 @@ module.exports = (app) =>{
         })
         
     //Find specific
-    app.get('/l/:postId', (req, res,)=>{ // get single post by post ID   
+    app.get('/post:id', (req, res,)=>{ // get single post by post ID   
             models.Post.findById(req.params.postId,
                                 { include: [ 
                                             { 
