@@ -124,7 +124,7 @@ function processData(data) {
         var $description = $("<a href=" + artUrl + '><div class="description">' + description + "</div ></a>");
         $description.attr("max-width", 400);
 
-        $(".wrapper").append(imgDisplay, $title, $description,"________________________________________________________________________________________________________________",  );
+        $(".wrapper").append(imgDisplay, $title, $description,".",  );
         console.log(artUrl);
     }
 }
