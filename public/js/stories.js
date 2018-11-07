@@ -1,8 +1,8 @@
 $(document).ready(function() {
     // Getting jQuery references to the post body, title, form, and user select
-    var bodyInput = $("#body");
-    var titleInput = $("#title");
-    var stories = $("#stories");
+    var bodyInput = $("#textarea2");
+    var titleInput = $("#textarea1");
+    var stories = $("#newPost");
     var userSelect = $("#user");
     // Adding an event listener for when the form is submitted
     $(stories).on("submit", handleFormSubmit);
