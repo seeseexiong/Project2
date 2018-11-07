@@ -69,7 +69,7 @@ $(document).ready(function () {
 
 $.ajax({
     url:
-        "https://newsapi.org/v2/top-headlines?sources=national-geographic,entertainment-weekly&apiKey=8eb98b7edadc498986a4c7408ee44ab3",
+        "https://newsapi.org/v2/top-headlines?sources=national-geographic,buzzfeed&apiKey=8eb98b7edadc498986a4c7408ee44ab3",
     method: "GET",
     error: function () {
         console.log("fucked");
