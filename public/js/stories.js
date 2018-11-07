@@ -1,8 +1,8 @@
 $(document).ready(function() {
     // Getting jQuery references to the post body, title, form, and user select
-    var bodyInput = $("#body");
-    var titleInput = $("#title");
-    var stories = $("#stories");
+    var bodyInput = $("#textarea2");
+    var titleInput = $("#textarea1");
+    var stories = $("#newPost");
     var userSelect = $("#user");
     // Adding an event listener for when the form is submitted
     $(stories).on("submit", handleFormSubmit);
@@ -56,10 +56,10 @@ $(document).ready(function() {
       }
     }
   
-    // Submits a new post and brings user to dashboard page upon completion
+    // Submits a new post and brings user to homepage page upon completion
     function submitPost(post) {
       $.post("/api/posts", post, function() {
-        window.location.href = "/dashboard";
+        window.location.href = "/index.html";
       });
     }
   
