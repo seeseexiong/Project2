@@ -5,21 +5,17 @@ const path = require('path');
 
 module.exports = function (app, passport) {
     // new handlebar routes ------------------------------------------------------------------------
-    
-    // rescricted routes ===================================================
-    // function isLoggedIn(req, res, next) {
-    //     if (req.isAuthenticated())
-    //         return next();
-
-    //     res.redirect('/');
-    // }
-
-    //-----------------------------------------------------------------------------------------------
+    // LOGIN Dashboard ======================================================== 
+    router.get('/login', function (req, res) {
+        //res.sendFile(path.join(__dirname + '/public/login.html'));
+        console.log('works');
+    });
 
     // SignUp ======================================================== 
-    router.get('/signup', function (req, res) {
-        res.render("signup");
-    });
+    // router.get('/signup', function (req, res) {
+    //     //res.redirect("/#signUpModal");
+
+    // });
     // signup redirects
     router.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/', //can change where to redirect
@@ -28,9 +24,9 @@ module.exports = function (app, passport) {
     ));
 
     // SignIn ======================================================== 
-    router.get('/signin', function (req, res) {
-        res.render("signin");
-    });
+    // router.get('/signin', function (req, res) {
+    //     //res.redirect("/#signInModal");
+    // });
     // signin redirects
     router.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/user', //can change where to redirect
@@ -38,9 +34,9 @@ module.exports = function (app, passport) {
     }
     ));
 
-    // User Dashboard ======================================================== 
-    // router.get('/dashboard', function (req, res) {
-    //     res.render("dashboard");
+    // // LOGIN Dashboard ======================================================== 
+    // router.get('/signin', function (req, res) {
+    //     res.sendFile(path.join(__dirname + '/public/login.html'));
     // });
 
 

@@ -31,11 +31,31 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 
+// ------------------------------------------------------------
 // Routes ======================================================
+// ------------------------------------------------------------
 // USER page ========================================================
-app.get('/user', function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/user.html'));
-  });
+app.get('/user', checkAuthentication, function (req, res) {
+  res.sendFile(path.join(__dirname + '/public/user.html'));
+});
+function checkAuthentication(req, res, next) {
+  if (req.isAuthenticated()) {
+    //req.isAuthenticated() will return true if user is logged in
+    next();
+  } else {
+    res.redirect("/");
+  }
+}
+// app.get('/user', function (req, res) {
+//   res.sendFile(path.join(__dirname + '/public/user.html'));
+// });
+
+// // LOGIN Dashboard ======================================================== 
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname + '/public/login.html'));
+  console.log('works');
+});
+
 // Stories page ========================================================
 app.get('/stories', function (req, res) {
   res.sendFile(path.join(__dirname + '/public/stories.html'));
@@ -49,8 +69,7 @@ app.get('/friends', function (req, res) {
   res.sendFile(path.join(__dirname + '/public/friends.html'));
 });
 
-
-//require("./routes/apiRoutes")(app, passport);
+require("./routes/apiRoutes")(app, passport);
 require("./routes/auth.js")(app, passport);
 require("./routes/htmlRoutes.js")(app, passport);
 
