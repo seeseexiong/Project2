@@ -2,24 +2,17 @@ var express = require('express');
 var router = express.Router();
 const path = require('path');
 
-// function isLoggedIn(req, res, next) {
-//     if (req.isAuthenticated())
-//         return next();
-
-//     res.redirect('/signin');
-// }
 
 module.exports = function (app, passport) {
     // new handlebar routes ------------------------------------------------------------------------
-    // Home Page ===================================================
     
-    // router.get('/', function (req, res) {
-    //     res.render("index");
-    // });
-    // User Page ===================================================
+    // rescricted routes ===================================================
+    // function isLoggedIn(req, res, next) {
+    //     if (req.isAuthenticated())
+    //         return next();
 
- 
-
+    //     res.redirect('/');
+    // }
 
     //-----------------------------------------------------------------------------------------------
 
