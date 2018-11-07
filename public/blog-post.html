@@ -55,38 +55,100 @@
             /* border: 1px solid #666;
             border-radius: 10px; */
         }
-
-        /* #actionButton {
-            position: absolute !important;
-            display: inline-block;
-            right: auto;
-            bottom: auto;
-        } */
     </style>
 
 </head>
 
 <body>
 
+    <nav class="nav-extended" class="white" role="navigation">
+        <div class="nav-wrapper" id="nav-margin">
+            <a id="logo-container" href="user.html" class="brand-logo">Social Stories</a>
 
-    <!-- New Story Nav -->
-    <div class="row postNav">
-        <div class="col s12 m6">
-            <div class="logo">
-                <i class="material-icons medium logo-icon">font_download</i>
-                <span class="logo-text">
-                    <h5 class="logo-text">Social Story</h5>
-                    <p class="logo-text"> New Draft </p>
-                </span>
-            </div>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <div class="center row">
+                        <div class="col s12 ">
+                            <div class="row" id="topbarsearch">
+                                <div class="input-field col s6 s12 ">
+                                    <i class=" material-icons prefix">search</i>
+                                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-trigger' href='#' data-target='dropdown1'>Profile</a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li>
+                            <a href="blog-post.html">Write a story</a>
+                        </li>
+                        <li>
+                            <a href="stories.html">Stories</a>
+                        </li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li>
+                            <a href="friend-follwers2.html">Followed</a>
+                        </li>
+                        <li>
+                            <a href="favorites.js">Bookmarks</a>
+                        </li>
+                        <li>
+                            <a href="#!">Sign out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li>
+                    <a href="user.html">Social Stories</a>
+                </li>
+                <li>
+                    <div class="center row">
+                        <div class="col s12 ">
+                            <div class="row" id="topbarsearch">
+                                <div class="input-field col s6 s12 ">
+                                    <i class=" material-icons prefix">search</i>
+                                    <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="blog-post.html">Write a story</a>
+                </li>
+                <li>
+                    <a href="stories.html">Stories</a>
+                </li>
+
+                <li>
+                    <a href="friend-follwers2.html">Followed</a>
+                </li>
+                <li>
+                    <a href="favorites.js">Bookmarks</a>
+                </li>
+                <li>
+                    <a href="/logout">Sign out</a>
+                </li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
         </div>
-        <div class="col s12 m6">
-            <div class="right ">
-                <a class="waves-effect waves-light btn-small">Save</a>
-                <a class="waves-effect waves-light btn-small">Help</a>
-                <a class="waves-effect waves-light btn-small">Settings</a>
-            </div>
-        </div>
+    </nav>
+
+
+
+    <div id="navbar" class="center" id="allNews" role="navigation">
+        <a class="center" href="#stories.html">Published</a>
+        <a class="center" href="blog-post.html">My Home Page</a>
     </div>
 
     <!-- Post Page Header -->
@@ -129,97 +191,101 @@
             </div>
         </div>
         <!-- Post Body -->
+        <form action="/posts" id="newPost" class="row" name="post" method="post"></form>
         <div class="row">
             <div class="input-field col s12">
                 <textarea id="textarea2" class="materialize-textarea"></textarea>
                 <label for="textarea2">Tell your story...</label>
 
-            <div class="col s12">
-                <div id="actionButton" class="fixed-action-btn ">
-                    <a class="btn-floating btn-large red">
-                        <i class="large material-icons">mode_edit</i>
-                    </a>
-                    <ul>
-                        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-                        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-                        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-                    </ul>
+                <div class="col s12">
+                    <div id="actionButton" class="fixed-action-btn ">
+
+                        <button class="btn waves-effect waves-light" type="submit" name="post">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
                 </div>
+
             </div>
 
         </div>
 
-    </div>
 
+        <script>
 
-    <script>
-
-        // action button
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.fixed-action-btn');
-            var instances = M.FloatingActionButton.init(elems, {
-                direction: 'top'
+            // action button
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.fixed-action-btn');
+                var instances = M.FloatingActionButton.init(elems, {
+                    direction: 'top'
+                });
             });
-        });
 
-        // Type text 
-        var TxtRotate = function (el, toRotate, period) {
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 10) || 2000;
-            this.txt = '';
-            this.tick();
-            this.isDeleting = false;
-        };
-
-        TxtRotate.prototype.tick = function () {
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
-
-            if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
-            }
-
-            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-            var that = this;
-            var delta = 300 - Math.random() * 100;
-
-            if (this.isDeleting) { delta /= 2; }
-
-            if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-            } else if (this.isDeleting && this.txt === '') {
+            // Type text 
+            var TxtRotate = function (el, toRotate, period) {
+                this.toRotate = toRotate;
+                this.el = el;
+                this.loopNum = 0;
+                this.period = parseInt(period, 10) || 2000;
+                this.txt = '';
+                this.tick();
                 this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-            }
+            };
 
-            setTimeout(function () {
-                that.tick();
-            }, delta);
-        };
+            TxtRotate.prototype.tick = function () {
+                var i = this.loopNum % this.toRotate.length;
+                var fullTxt = this.toRotate[i];
 
-        window.onload = function () {
-            var elements = document.getElementsByClassName('txt-rotate');
-            for (var i = 0; i < elements.length; i++) {
-                var toRotate = elements[i].getAttribute('data-rotate');
-                var period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
                 }
-            }
-            // Add CSS
-            var css = document.createElement("style");
-            css.type = "text/css";
-            css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-            document.body.appendChild(css);
-        };
 
+                this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+
+                var that = this;
+                var delta = 300 - Math.random() * 100;
+
+                if (this.isDeleting) { delta /= 2; }
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    delta = this.period;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.loopNum++;
+                    delta = 500;
+                }
+
+                setTimeout(function () {
+                    that.tick();
+                }, delta);
+            };
+
+            window.onload = function () {
+                var elements = document.getElementsByClassName('txt-rotate');
+                for (var i = 0; i < elements.length; i++) {
+                    var toRotate = elements[i].getAttribute('data-rotate');
+                    var period = elements[i].getAttribute('data-period');
+                    if (toRotate) {
+                        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                    }
+                }
+                // Add CSS
+                var css = document.createElement("style");
+                css.type = "text/css";
+                css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+                document.body.appendChild(css);
+            };
+
+
+        </script>
+        <!--  Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
 
     </script>
     <!--  Scripts-->

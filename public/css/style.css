@@ -164,6 +164,9 @@ height: 70px;
 form {
 	text-align: center;
 }
+i.fas.fa-user-plus {
+  color: white;
+}
 
 /* grids for the friends feed ===========================================*/
 .headerPlaceholder {
