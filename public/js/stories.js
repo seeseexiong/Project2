@@ -56,10 +56,10 @@ $(document).ready(function() {
       }
     }
   
-    // Submits a new post and brings user to dashboard page upon completion
+    // Submits a new post and brings user to homepage page upon completion
     function submitPost(post) {
       $.post("/api/posts", post, function() {
-        window.location.href = "/dashboard";
+        window.location.href = "/index.html";
       });
     }
   
