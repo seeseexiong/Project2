@@ -67,3 +67,43 @@ $(document).ready(function () {
     
 
 });
+
+
+$.ajax({
+    url:
+      "https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey=8eb98b7edadc498986a4c7408ee44ab3",
+    method: "GET",
+    error: function() {
+      console.log("fucked");
+    },
+    success: function(data) {
+      processData(data);
+    }
+  });
+  
+  function processData(data) {
+    var articleItems = [];
+  
+    for (var i = 0; i < data.articles.length; i++) {
+      var author = data.articles[i].author;
+      var title = data.articles[i].title;
+      var description = data.articles[i].description;
+      var artUrl = data.articles[i].url;
+  
+      var $author = $('<div class="author">Author: ' + author + "</div >");
+      var $title = $(
+        "<a href=" + artUrl + '><div class="title">' + title + "</div ></a>"
+      );
+      var $description = $(
+        "<a href=" +
+          artUrl +
+          '><div class="description">' +
+          description +
+          "</div ></a>"
+      );
+  
+      $(".wrapper").append($author, $title, $description);
+      console.log(artUrl);
+    }
+  }
+  
