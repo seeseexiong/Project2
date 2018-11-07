@@ -154,7 +154,8 @@
     <!-- Post Page Header -->
     <div class="row container">
         <div class="col s12 ">
-            <div class="header center">
+            <div class= " header center">
+            <form action="/post" method="post">
                 <h2>Write a ...
                     <span class="txt-rotate" data-period="2000" data-rotate='[ "story.", "poem.", "novel.", "review.", "idea." ]'></span>
                 </h2>
@@ -243,6 +244,7 @@
 
                 this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
+<<<<<<< HEAD
                 var that = this;
                 var delta = 300 - Math.random() * 100;
 
@@ -284,6 +286,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
+=======
+    </script>
+    <!--  Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script src="../routes/post-api-routes.js"></script>    
+>>>>>>> 45510483340693e052dc857014f4c44670901ece
 </body>
 
 </html>
