@@ -1,5 +1,5 @@
 /* //------------------------------------------------------------
-  SERVER.JS 567
+  SERVER.JS kk 553p
 */ //-------------------------------------------------------------
 
 // Require ======================================================
@@ -10,40 +10,25 @@ const exphbs = require("express-handlebars");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
+const path = require('path');
 const passport = require('passport'); 
-const serve = require('express-static')
-const path = require('path')
+const static = require('express-static')
 
-var db = require("./models");
-
-// Express
-var app = express();
+// Port and Models
+var models = require("./models");
 var PORT = process.env.PORT || 3000;
 
-// Middleware Config ======================================================
 
 // Express --------------------------
-// var app = express();
+var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cookieParser()); // read cookies (needed for auth)
-// app.use(express.static("public"));
 
 
-// Passport 
-//require('./config/passport/passport')(app);
-
-//Static
-// app.use(serve('public'))
-app.use(express.static("public"));
-
-// app.get('/', function(req, res) {
-//   res.sendFile(path.join(__dirname + 'public/index.html'));
-// });
-// app.get('/user', function(req, res) {
-//   res.sendFile(path.join(__dirname + '/public/user.html'));
-// });
-
+// Passport --------------------------
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
 
 // Routes ======================================================
@@ -65,14 +50,13 @@ app.get('/friends', function(req, res) {
 });
 
 
-require("./routes/apiRoutes")(app, passport);
+//require("./routes/apiRoutes")(app, passport);
 require("./routes/auth.js")(app, passport);
-require("./routes/htmlRoutes")(app, passport);
+require("./routes/htmlRoutes.js")(app, passport);
 
 
 //load passport strategies
-//require('./config/passport/passport.js');
-
+require('./config/passport/passport.js')(passport, models.user);
 
 var syncOptions = { force: false };
 
@@ -83,18 +67,11 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ==========================================
-db.sequelize.sync(syncOptions).then(function() {
+models.sequelize.sync(syncOptions).then(function() {
   console.log(process.env.NODE_ENV)
   app.listen(PORT, function() {
     console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT,
-    );
+      "Some badass people starting baddass servers on: http://localhost:" + PORT);
     
   });
 });
-
-//module.exports = app;
-
-
