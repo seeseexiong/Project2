@@ -30,9 +30,14 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../friend-followers2.html"));
   });
 
+
+  // Render 404 page for any unmatched routes
+  app.get("*", function (req, res) {
+
  // Render 404 page for any unmatched routes
   app.get("*",  (req, res) => {
+
     res.render("404");
   });
-}
+  })}
 
