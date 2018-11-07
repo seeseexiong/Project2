@@ -1,5 +1,5 @@
 /* //------------------------------------------------------------
-  SERVER.JS 567
+  SERVER.JS kk 553p
 */ //-------------------------------------------------------------
 
 // Require ======================================================
@@ -29,34 +29,6 @@ app.use(bodyParser.json());
 app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-
-//Static
-// app.use(express.static('public'));
-
-// app.get('/', function(req, res) {
-//   res.sendFile(path.join(__dirname + 'public/index.html'));
-// });
-// app.get('/user', function(req, res) {
-//   res.sendFile(path.join(__dirname + '/public/user.html'));
-// });
-
-// Handlebars --------------------------
-// app.engine(
-//   "handlebars",
-//   exphbs({
-//     defaultLayout: "main"
-//   })
-// );
-// app.set("view engine", "handlebars");
-
-// app.engine('handlebars', exphbs({
-//   extname: '.handlebars',
-//   defaultLayout: 'main',
-//   partialsDir: path.join(__dirname, '/views/partials'),
-//   layoutsDir: path.join(__dirname, '/views/layouts')
-// }));
-// app.set('view engine', 'handlebars');
-// app.set('views',path.join(__dirname,'/views'));
 
 
 // Routes ======================================================
@@ -103,4 +75,3 @@ models.sequelize.sync(syncOptions).then(function() {
     
   });
 });
-
