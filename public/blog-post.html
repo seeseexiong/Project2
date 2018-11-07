@@ -93,7 +93,7 @@
                         </li>
                         <li class="divider" tabindex="-1"></li>
                         <li>
-                            <a href="friend-follwers2.html">Followed</a>
+                            <a class="center" href="friends.html">Your Network</a>
                         </li>
                         <li>
                             <a href="favorites.js">Bookmarks</a>
@@ -122,14 +122,14 @@
                     </div>
                 </li>
                 <li>
-                    <a href="blog-post.html">Write a story</a>
+                    <a class="center" href="blog-post.html">Write a story</a>
                 </li>
                 <li>
                     <a href="stories.html">Stories</a>
                 </li>
 
                 <li>
-                    <a href="friend-follwers2.html">Followed</a>
+                    <a class="center" href="friends.html">Your Network</a>
                 </li>
                 <li>
                     <a href="favorites.js">Bookmarks</a>
@@ -148,19 +148,19 @@
 
     <div id="navbar" class="center" id="allNews" role="navigation">
         <a class="center" href="stories.html">Published</a>
-        <a class="center" href="blog-post.html">My Home Page</a>
+        <a class="center" href="user.html">Home Page</a>
     </div>
 
     <!-- Post Page Header -->
     <div class="row container">
         <div class="col s12 ">
-            <div class= " header center">
-            <form action="/post" method="post">
-                <h2>Write a ...
-                    <span class="txt-rotate" data-period="2000" data-rotate='[ "story.", "poem.", "novel.", "review.", "idea." ]'></span>
-                </h2>
-                <h5 class="flow-text">A single &lt;idea&gt; is all you need to start.</h5>
-                <hr>
+            <div class=" header center">
+                <form action="/post" method="post">
+                    <h2>Write a ...
+                        <span class="txt-rotate" data-period="2000" data-rotate='[ "story.", "poem.", "novel.", "review.", "idea." ]'></span>
+                    </h2>
+                    <h5 class="flow-text">A single &lt;idea&gt; is all you need to start.</h5>
+                    <hr>
             </div>
         </div>
     </div>
@@ -259,6 +259,7 @@
 
                 this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
+
                 var that = this;
                 var delta = 300 - Math.random() * 100;
 
@@ -296,10 +297,13 @@
 
 
         </script>
+
+        </script>
         <!--  Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/materialize.js"></script>
         <script src="js/init.js"></script>
+
 
     </script>
     <!--  Scripts-->
@@ -307,6 +311,7 @@
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
     <script src="js/stories.js"></script>    
+
 </body>
 
 </html>
