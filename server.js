@@ -35,20 +35,20 @@ app.use(passport.session()); // persistent login sessions
 // Routes ======================================================
 // ------------------------------------------------------------
 // USER page ========================================================
-// app.get('/user', checkAuthentication, function (req, res) {
-//   res.sendFile(path.join(__dirname + '/public/user.html'));
-// });
-// function checkAuthentication(req, res, next) {
-//   if (req.isAuthenticated()) {
-//     //req.isAuthenticated() will return true if user is logged in
-//     next();
-//   } else {
-//     res.redirect("/");
-//   }
-// }
-app.get('/user', function (req, res) {
-  res.sendFile(path.join(__dirname + '/public/user.html'));
-});
+app.get('/user', checkAuthentication, function (req, res) {
+   res.sendFile(path.join(__dirname + '/public/user.html'));
+ });
+ function checkAuthentication(req, res, next) {
+  if (req.isAuthenticated()) {
+    //req.isAuthenticated() will return true if user is logged in
+     next();
+   } else {
+     res.redirect("/");
+  }
+ }
+//app.get('/user', function (req, res) {
+//  res.sendFile(path.join(__dirname + '/public/user.html'));
+//});
 
 // // LOGIN Dashboard ======================================================== 
 app.get('/login', function (req, res) {
