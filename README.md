@@ -15,6 +15,13 @@ As a user, I want to be able to search for other users with the same interest an
 **Front-end:** Materialize, handlebars, HTML, CSS, Javascript & JQueary
 **Back-end:** Node.js, Express, Sequelize, Mysql Workbench, Passport
 Built from visual studio code. 
+![nov-7-2018-4_24-pm_trim_part1](https://user-images.githubusercontent.com/37755774/48166564-8fd3a800-e2ae-11e8-9585-01604918807d.gif)
+
+
+![nov-7-2018-4_24-pm-copy_trim3_trim](https://user-images.githubusercontent.com/37755774/48167251-bc88bf00-e2b0-11e8-9e1d-d53ed80ab632.gif)
+
+![nov-7-2018-4_24-pm-_trim2_trim_1 1](https://user-images.githubusercontent.com/37755774/48167687-18a01300-e2b2-11e8-9c51-8248485a133a.gif)
+
 
 ## Authors:
 Denis Plaster, Katie Kasperek, Isaiah Ramsey, Parker Call, See Xiong
