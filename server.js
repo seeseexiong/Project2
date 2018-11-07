@@ -11,7 +11,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const path = require('path');
-const passport = require('passport'); 
+const passport = require('passport');
 const static = require('express-static')
 
 // Port and Models
@@ -31,26 +31,45 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 
+// ------------------------------------------------------------
 // Routes ======================================================
+// ------------------------------------------------------------
 // USER page ========================================================
-app.get('/user', function(req, res) {
+app.get('/user', checkAuthentication, function (req, res) {
   res.sendFile(path.join(__dirname + '/public/user.html'));
 });
+function checkAuthentication(req, res, next) {
+  if (req.isAuthenticated()) {
+    //req.isAuthenticated() will return true if user is logged in
+    next();
+  } else {
+    res.redirect("/");
+  }
+}
+// app.get('/user', function (req, res) {
+//   res.sendFile(path.join(__dirname + '/public/user.html'));
+// });
+
+// // LOGIN Dashboard ======================================================== 
+app.get('/login', function (req, res) {
+  res.sendFile(path.join(__dirname + '/public/login.html'));
+  console.log('works');
+});
+
 // Stories page ========================================================
-app.get('/stories', function(req, res) {
+app.get('/stories', function (req, res) {
   res.sendFile(path.join(__dirname + '/public/stories.html'));
 });
 // Blog Post page ========================================================
-app.get('/blog-post', function(req, res) {
+app.get('/blog-post', function (req, res) {
   res.sendFile(path.join(__dirname + '/public/blog-post.html'));
 });
 // Friends & Followers page ========================================================
-app.get('/friends', function(req, res) {
+app.get('/friends', function (req, res) {
   res.sendFile(path.join(__dirname + '/public/friends.html'));
 });
 
-
-//require("./routes/apiRoutes")(app, passport);
+require("./routes/apiRoutes")(app, passport);
 require("./routes/auth.js")(app, passport);
 require("./routes/htmlRoutes.js")(app, passport);
 
@@ -67,11 +86,11 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ==========================================
-models.sequelize.sync(syncOptions).then(function() {
+models.sequelize.sync(syncOptions).then(function () {
   console.log(process.env.NODE_ENV)
-  app.listen(PORT, function() {
+  app.listen(PORT, function () {
     console.log(
       "Some badass people starting baddass servers on: http://localhost:" + PORT);
-    
+
   });
 });

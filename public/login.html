@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Social Stories</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>Dashboard</h2>
+
+            <a href="/" class="btn btn-default"><span class="fa fa-user"></span> home</a>
+    
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <h3>Sign UP</h3>
+                <div class="">
+                    <form id="signup" name="signup" method="post" action="/signup">
+                        <label for="name">Name</label>
+                        <input name="name" type="text" />
+
+                        <label for="email">Email Address</label>
+                        <input class="text" name="email" type="email" />
+
+                        <label for="username">Username</label>
+                        <input class="text" name="username" type="text" />
+
+                        <label for="password">Password</label>
+                        <input name="password" type="password" />
+
+                        <input class="btn btn-primary" type="submit" value="SignUp" />
+                    </form>
+                </div>
+            </div>
+            <div class="col s6">
+                <h3>Sign IN</h3>
+                <div class="">
+                    <form id="signin" name="signin" method="post" action="/signin">
+                        <label for="username">Username</label>
+                        <input class="text" name="username" type="text" />
+
+                        <label for="password">Password</label>
+                        <input name="password" type="password" />
+
+                        <input class="btn" type="submit" value="SignIn" />
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
