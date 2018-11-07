@@ -6,7 +6,7 @@ if (process.env.JAWSDB_URL) {
 } else {
     connection = mysql.createConnection({
       host: "localhost",
-      port: 3306,
+      port: 8889,
       user: "root",
       password: "root",
       database: "social_storydb"
