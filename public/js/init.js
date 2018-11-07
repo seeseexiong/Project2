@@ -84,7 +84,8 @@ function processData(data) {
 
     for (var i = 0; i < data.articles.length; i++) {
 
-
+        // var rowGuy = $("<div class='row'>");
+        // var colGuy = $("<div class='col-lg-12'>");
         var newsDiv = $("<div class='card'>");
 
         var title = data.articles[i].title;
@@ -112,24 +113,18 @@ function processData(data) {
         colOne.addClass("col-lg-4");
         cardRow.append(colOne);
 
-        var imgDisplay = $("<img>");
+        var imgDisplay = $("<img class='center'>");
         imgDisplay.attr("width", 400);
         imgDisplay.attr("height", 250);
         imgDisplay.attr("src", image);
         colOne.append(imgDisplay);
 
-        var $title = $(
-            "<a href=" + artUrl + '><div class="title">' + title + "</div ></a>"
-        );
-        var $description = $(
-            "<a href=" +
-            artUrl +
-            '><div class="description">' +
-            description +
-            "</div ></a>"
-        );
+        var $title = $("<h4><a href=" + artUrl + '><div class="title">' + title + "</div ></a></h4>");
+        
+        var $description = $("<a href=" + artUrl + '><div class="description">' + description + "</div ></a>");
+        $description.attr("max-width", 400);
 
-        $(".wrapper").append(imgDisplay, $title, $description,"_______________________________________________________________________________________",  );
+        $(".wrapper").append(imgDisplay, $title, $description,"________________________________________________________________________________________________________________",  );
         console.log(artUrl);
     }
 }
